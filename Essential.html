@@ -1,0 +1,111 @@
+<!-- Chapter 1: The Essentials of Responsive Web Design -->
+
+<!--
+
+# Responsive web design in the recent years is simply a de facto standard.
+  
+             ### The browser and device Landscape ### 
+
+>. Why consider responsive web design: Because a majority of internet users typically use mobile phones to
+browse the internet.
+>. Responsive Web design as coined by Ethan Marcotte in 2010 consolidates three existing techniques
+that is flexible grid layout, flexible images/media and media queries into one unified approach.
+
+>. Hence it is the presentation of web content in the most relevant format for the viewport and device accessing it.
+>. Unlike the past where a fixed-width desktop design was the starting point, the recent years pick up a progressive'enhancing way, where
+everything from content management and development starts with the smallest screen first then larger screens and more capable devices.
+ 
+// Browser Support
+>. When starting a responsive design project one of the many key considerations is browser support.
+>. And with so many browsers and device variants, its not always pragmatic to support every single browser permutation fully,
+>. Ultimately, the only browser statistics that matter are yours.
+
+>. If you are working on a greenfield project, where there is no existing browser usage data, one facto to at least think about 
+is the demographics of your target audience and make some broad assumptions about likely devices/browsers based on those demographics.
+>. Before considering any web project you should make sense to decide, in advance, what platforms you need to fully support and which you are happy to
+concede visual/functional anomalies to.
+
+** Tool: http://caniuse.com. Can I Use : which provides a simple interface for establishing the browser support for each web platform feature.
+
+>> Final remarks, When starting a project, a simple and broad way to determine what browsers to support is applying a crude piece of logic;
+if the cost of developing and supporting browser X is more than the revenue/benefit created by the users on browsers X, then dont develop specific solutions
+for browser X.
+
+// Tools for Software Development
+
+A]] CSS post-processors (PostCSS) can help in automating horrible and thankless jobs like CSS vendor prefixing, an old requirement which necessitated writing
+ multiple versions of a property for browser engine, and poly-filling CSS features, where newer syntaxes can be made to work on older browsers.
+ 
+B]] Linting and Validation Tools: These check your HTML, CSS and Javascript code, while eliminating many time-wasting typos or syntax-induced errors.
+
+C]] Formatting tools like prettier, automatically format your code with indentations and spacing when you save.
+
+
+
+   ### Example Chapter 1 Breakdown ###
+
+>. By default web pages are inherently flexible, hence when no special work is done to make the site responsive,
+and resize the browser window, the text re-flows as needed.
+>. Note IOS renders web pages at 980 px wide by default and shrinks them down to viewport.
+
+>. Viewport is the area of a browser that a web page is allowed to be viewed.
+>. The viewport area excludes the browser, toolbars and URL bar e.t.c.
+
+>. The viewport meta tag is the non-standard but de facto way of telling the browser how to render the page.
+>.Essentially our viewport meta tag is effectively saying "make the content render at the width of the device.
+."
+
+// Taming Images.
+
+>. The Max-width rule stipulates that all images should grow to be a maximum of 100% of their size.
+>. Hence the image will simply scale up to display as large as it can with that constraint.
+
+     // A brief tangent on width/max-width for images
+>. To make images fluid, we can use the width property.
+>. Example setting the width: 100%, will cause the image displayed to stretch beyond its intrinsic size in order to
+fill 100% of its container.
+>. With a container far wider that the image, this will lead to the image being massively oversized.
+>. To fix this we can use media queries.
+
+// Enter Media Queries
+
+>. Media queries are directives in CSS that allow us to isolate CSS rules to certain environment conditions, 
+size of screen.
+    
+     // BreakPoints
+>. Breakpoint refers to a viewport width or height at which a responsive design should change significantly.
+>. Use a breakpoint if your design visually needs to change at a certain point, but don't cater to only a specific device.
+>. Example a minimum-width media query, the CSS rules within this type of media query only get applied if the viewport is or exceeds a certain width.
+
+
+@media screen and (min-width: 800px) {
+    /*styles*/
+}
+
+>. The media directive tells the browser that we are starting the media query, the screen part tells the browser that these rules should be applied to all screen
+types and the 'and' keyword, which chains together another set of conditionals, which in this case is the
+ (min-width: 800px) -> which tells the browser that the rules should also be limited to all viewports at least 800px wide.
+
+>. This approach facilitates a "smallest screen first" mentality and allows us to progressively layer on detail as an when the design needs to change for bigger screens.
+
+
+// Note on Vendor Prefix
+
+>. Vendor prefixes have been employed historically to prefix experimental CSS properties in different browsers.
+>. Example -webkit-backface-visibility.
+>. Including vendor prefixes in CSS is often essential to achieve support for certain properties in older versions.
+>. Currently there are tools which automate this prefixing and , these tools perform the task faster and more accurately than we can.
+
+
+                     ### Summary ###
+>. Responsive designs are made possible with flexible layout, fluid images, and media queries.
+>. A meta tag is needed in the head of your HTML so as browser knows how to render the page.
+>. You'll want all the images to be set with a max width of 100% in the CSS by default.
+>. A breakpoint is just a point, typically a screen width, at which we use a media query to alter the design.
+>. When you write CSS for responsive design, start with base styles that can work on any device, typically the smallest screen, and then use media queries to adapt for larger screens.
+
+
+
+
+
+-->
