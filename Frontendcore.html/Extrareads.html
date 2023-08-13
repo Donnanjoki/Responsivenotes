@@ -24,7 +24,22 @@ what document you are styling with CSS.
 
     3]] html element Selector
 
->. 
+>. This selector reps the root element of an HTML document.
+>. It has two child elements, that is the head element and the body element.
+>. Some styles declared in it can be inherited by its descendants and can be overridden by them.
+>. It is not recommended to apply styles to the html element because they will be overridden by the 
+body element styles and any other element in the document.
+>. An exception to this could be declaring font styles that will be inherited by all its descendant elements, e.g font -size.
+This is because the html element selector as the root element, has the rem(root em unit) sizing of any element based on whatever font size set for the element.
+>. Another reason is the body element tends to take up all the space in the html document, hence it would be futile to style up
+ the html document as the body element will eventually cover it up in the browser.
+
+      4]] The body element selector
+
+>. This contains all the elements that we see in our browser.
+>.The only difference between the body and the html element is that the body element has a higher specificity than the html element selector.
+>. Hence whichever style you have in the body element will override any replicate style in the html element. Also its styles can be overridden by the element styles within it.
+>.It's better to declare styles in the body than in the html.
 
 -->
 
@@ -32,6 +47,54 @@ what document you are styling with CSS.
                       Topic: Choosing the Best CSS Unit to Create Better Site Layouts
 From: https://wpengine.com/resources/choose-css-unit-create-better-site-layouts-how-to/
 
+              Types of CSS Units
+
+1. Absolute Units
+2. Font relative units
+3. viewport relative units
+
+
+      1]] Absolute Units
+
+>. These units depend on DPI (dots per inch) of screens as they vary depending on different screen resolutions. And
+are not affected by screen size.
+>. They include:
+  a] px (pixels)
+  b] in (inches)
+  c] cm (centimeter)
+  d] mm (millimeter)
+  e] pc (picas)
+  f] pt(points)
+
+
+      2]] Font Relative Units
+
+>. These units depend on the font size or font family of the document or its parent level elements.
+>. They include:
+    a] em
+    b] rem
+    c] ex
+    d] ch
+
+
+       3]] Viewport Relative Units
+
+>. These units depend on the viewport height and width size, such as 
+     a] vh (viewport height)
+     b] vw (viewport width)
+     c] vmin (viewport minimum)
+     d] vmax (viewport maximum)
+
+
+
+       4]] Percentage
+
+>. The percentage unit (%) does not belong to the listed category above but it can be categorized as a 
+relative unit, as it is relative to its parent element.
+>.It is primarily associated with height and width of an element, but can also be used anywhere CSS length unit are allowed.
+
+>. It comes in handy for creating a responsive or fluid layout.
+> Popular frameworks such as Bootstrap, foundation and Bulma use percentage for their base layout.
 
 
 -->
