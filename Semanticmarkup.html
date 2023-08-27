@@ -69,12 +69,28 @@ cant wrap a form in a tag either.
 
 
         ### Sectioning Elements ###
+From: https://html.spec.whatwg.org/#the-main-element
+and responsive web design book
 
->>>>The <main> element
->. 
+>>>>  The <main> element <<<<
+
+>. This element reps the dominant content of the document.
+>.The main content area of a document includes content that is unique to that document and excludes
+content that is repeated across a set of documents such as site navigation links, copyright info, site logos,
+and banners and search forms(unless the document or application's main function is that of a search form.)
+>. There shouldn't be more that one main on each page that doesn't have the hidden attribute specified.
+>. Also it shouldn't be used as a descendant of child elements of some of the other semantic HTML elements such as 
+article, aside, header, footer or nav.
 
 
+>>>> The <section> element <<<<
 
+>. This element is used to define a generic section of a document or application.
+>. This element is not meant for styling purposes, hence if you need to wrap an element to nearly style it then a div would suffice.
+>. A use case is it is used in wrapping elements for visual components. It provides a simple way to see the beginning and the end of components in the markup.
+>. A general rule is that section element is appropriate only if the element's contents would be listed explicitly in the document's outline.
+>. Example of sections would be chapters, the various tabbed pages in a tabbed dialog box or the numbered sections of a thesis.
+>. A web site's home page could be split into sections for an introduction, new items and contact information.
 
 
 
