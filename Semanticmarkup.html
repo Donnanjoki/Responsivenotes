@@ -1,5 +1,6 @@
 <!-- Chapter 2: Writing HTML Markup -->
 
+<!-- Sources: https://whatwg.org/ -->
 <!-- 
     HTML: HyperText Markup Language:
     This is a language that allows content to be marked up in a manner that makes it understandable to 
@@ -68,11 +69,11 @@ cant wrap a form in a tag either.
 
 
 
-        ### Sectioning Elements ###
+        Part A - ### Sectioning Elements ###
 From: https://html.spec.whatwg.org/#the-main-element
 and responsive web design book
 
->>>>  The <main> element <<<<
+     1]] The <main> element 
 
 >. This element reps the dominant content of the document.
 >.The main content area of a document includes content that is unique to that document and excludes
@@ -83,7 +84,7 @@ and banners and search forms(unless the document or application's main function 
 article, aside, header, footer or nav.
 
 
->>>> The <section> element <<<<
+    2]]  The <section> element 
 
 >. This element is used to define a generic section of a document or application.
 >. This element is not meant for styling purposes, hence if you need to wrap an element to nearly style it then a div would suffice.
@@ -91,6 +92,205 @@ article, aside, header, footer or nav.
 >. A general rule is that section element is appropriate only if the element's contents would be listed explicitly in the document's outline.
 >. Example of sections would be chapters, the various tabbed pages in a tabbed dialog box or the numbered sections of a thesis.
 >. A web site's home page could be split into sections for an introduction, new items and contact information.
+
+
+   3]] The <nav> element 
+
+>. The nav element is used to wrap major navigational links to other pages within the same page.
+>. If you usually mark up your navigational elements with an unordered list (ul) and a bunch of list tags (li), you
+may be better served with a nav and a number of nested a tags instead.
+
+    4]] The <article> element
+
+>. The article element is used to wrap a self-contained piece of content.
+>. Example of content that should be wrapped with an article element include forum post, a magazine or newspaper article, a blog entry, 
+a user-submitted comment, an interactive widget or gadget, or any other independent item of content
+
+  
+   5]] The <aside> element
+
+>. The aside element is used for content that is tangentially related to the content around it.
+>. Practically often used for sidebars, or content in a little tip about a related subject in a blog post.
+>. Other examples that would be suitable include: pull quotes, advertising and a group of navigation elements.
+>. Hence anything not directly related to the main content would work well in an aside.
+
+
+   6]]  The  <header> element
+
+>. The header element represents a group of introductory or navigational aids.
+>. The header element is intended to usually contain a heading (an h1-h6 element or an hgroup element), but not necessarily.
+>. The header element can also be used to wrap a section's table of content, a search form, or relevant logos.
+Note: You can have several <header> elements in one HTML document. However, <header> cannot be placed within a <footer>, 
+    <address> or another <header> element.
+>. Note you can have a header inside every section on your page.
+
+
+    7]] The <footer> element
+
+>. Typically, a footer contains information about its section such as who wrote it, links to related documents,
+copyright data e.t.c.
+>. Note the footer element is not itself sectioning content: it doesn't introduce a new section.
+>. Like headers, we can use footers several times if need be: example a footer of a blog but also a footer within a blog post
+article on the same blog.
+
+>. Note the contact info for the author or editor of a section belongs in an address element possibly itself inside a footer.
+
+
+
+            ### The HTML5 outline algorithm ###
+
+>. The reality is that search engines and the like make no use of HTML5 outliner at present, hence a pragmatic viewpoint is to continue
+thinking of headings in terms of the whole document. As this will make your documents easier to read for search engines and also aid assistive technology to infer the correct meaning.
+
+     
+    >>> A note on h1-h6 and the <hgroup> element
+
+>. The use of h1-h6 tags to mark up groups of headings and their associated sub-headings/taglines is discouraged.
+    
+    // Example: <h1>Scones:</h1>
+                <h2>The most resplendent of snacks</h2>
+
+>. Instead try and reserve h1-h6 elements for when sections of content require a distinct heading.
+
+>. Hence to group content we should use hgroup element like so:
+      <hgroup>
+        <h1>Scones:</h1>
+        <P>The most resplendent of snacks</p>
+        </hgroup>
+
+>. The hgroup element represents a heading and related content. The element may be used to group 
+an h1–h6 element with one or more p elements containing content representing a subheading, alternative title, or tagline.
+
+          PART B ### GROUPING ELEMENTS ###
+
+      1]] The <div> Element
+
+      2]] The <p> Element
+
+      3]] The <blockquote> Element
+
+      4]] The <figure> and <figcaption> elements
+
+
+      5]] The <details> and <summary> elements
+
+
+      6]] The <address> element
+
+
+          PART C ### HTML TEXT-LEVEL SEMANTICS###
+
+>. These are elements which are used to mark up individual words, letters and symbols to provide explicit meaning as to the intent.
+
+>. Most common and useful include;
+
+        1]] The <span> element
+
+>. This is the text-level equivalent of a div. Its unopinionated and good fo when you merely want to wrap
+a text in an element for styling purposes.
+
+        2]] The <b> element
+
+>. The <b> tag specifies bold text without any extra importance.
+>. The element is not intended to be used to surround large groups of markup; use div for that.
+>. Because it was historically used for bold text, you have to reset the font-weight in CSS. so that the btag does not appear bold.
+     // Example:
+          b{
+            font-weight: normal
+          }
+
+>. According to the HTML5 specifications, the <b> tag should be used as the last resort when no other tag is more appropriate.
+>. The specification states that headings should be denoted with the <h1> to <h6> tags, emphasized text should be denoted with the <em> tag,
+     important text should be denoted with the <strong> tag, and marked/highlighted text should be denoted with the <mark> tag 
+
+        3]] The strong Element
+
+>. This element is useful when you want to emphasize something for strength, urgency or importance.
+
+        4]]  The <em> Element
+
+>. The em element represents stress emphasis of its content
+
+        5]] The <i> Element
+
+>. A span of text in an alternate voice or mood, or otherwise offset from the normal prose in a manner
+indicating a different quality of text.
+>. Typically content inside it is in italics.
+>. The <i> tag is often used to indicate a technical term, a phrase from another language, a thought, a ship name, et
+>. Use the element when there is not a more appropriate semantic element such as:
+          1]] <em> (emphasized text)
+          2]] <mark> (marked/highlighted text)
+          3]] <strong> (important text)
+          4]] <cite> (the title of a work)
+          5]] <dfn> (a definition term)
+
+            ### Obsolete HTML feature ###
+
+>. Be aware of two camps of obsolete features in HTML. That is
+         1]] Conforming: These will work, but will generate warning in  validators - Avoid them!!
+         2]] Non-conforming: These may still render in certain browsers but they may not - not guaranteed.
+
+
+           ### WCAG accessibility conformance and WAI-ARIA for more accessible web applications ###
+
+>. WCAG (Web Content Accessibility Guidelines)
+
+>. WCAG exists to provide a single shared standard for web content accessibility that meets the needs of individuals, organizations and
+government internationally.
+
+>>>> Source: https://www.w3.org/WAI/standards-guidelines/wcag/glance/
+
+>. WAI-ARIA (Web Accessibility Initiative – Accessible Rich Internet Applications).
+
+>. The principal aim of WAI-ARAI is to solve the problem of making dynamic content on a web page accessible.
+   It provides a means for describing roles, states and properties for custom widgets such as dynamic sections in web applications.
+   So that they are recognizable and usable by assistive technology users. e.g blind people 
+
+>>>>> Source: https://www.w3.org/WAI/standards-guidelines/aria/
+
+
+>. Note the best way you can aid assistive technologies is to use the correct elements where possible.
+>. That is e.g using a header element rather than a <div class="Header">
+
+
+>>>> Additional: to explore a solid set of accessible design patterns, the W3C has a published set you can peruse here:
+    Source: https://www.w3.org/WAI/ARIA/apg/example-index/ 
+    Handy links and advice galore on the AIIY project: https://www.a11yproject.com/
+
+
+
+           ### Embedding Media in HTML5 ###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
