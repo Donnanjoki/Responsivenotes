@@ -277,12 +277,26 @@ government internationally.
 
            ### Embedding Media in HTML5 ###
 
+           >>> Adding video and audio in HTML
+ // <video src="myVideo.mp4"></video>
+>. HTML allows a single video tag or audio tag for audio. Additionally it is possible to insert text between the opening and closing tag to inform users where there is a problem.
 
+>. Additional attributes you can add include: the height and width.
+    // <video src="myVideo.mp4" width="640" height="480">
+        If you're reading this either the video didn't load or your browser is
+        waaaayyyyyy old!
+       </video>
 
+>. To add the default playback controls we have to add the controls attribute.
+      // Example with controls and autoplay attributes added.
 
+      <video src="myVideo.mp4" width="640" height="480" controls autoplay>
+           If you're reading this either the video didn't load or your browser is wayy old!
+      </video>
 
-
-
+>. Other attributes include;
+     preload to control the preloading of media, loop to repeat the video, and poster to define a poster for the video-the image
+     that shows
 
 
 
