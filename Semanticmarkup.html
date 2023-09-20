@@ -296,15 +296,89 @@ government internationally.
 
 >. Other attributes include;
      preload to control the preloading of media, loop to repeat the video, and poster to define a poster for the video-the image
-     that shows
+     that shows while a video is loading.
+     // Example:
+         <video
+            src="myVideo.mp4"
+            width="640"
+            height="480"
+            controls
+            autoplay
+            muted
+            preload="auto"
+            loop
+            poster="myVideoPoster.png"
+        >
+        If you're reading this either the video didn't load or your browser is wayy old!
+      </video>
+
+
+             ### Providing Alternate Media Sources ###
+
+>. The source tag enables us to provide alternate sources for the media.
+>. The type attribute tells the browser the MIME type of the resource. If you fail to specify the browser will fetch the content and try and play anyway.
+>. But if available always add the MIME type.
+        // Example
+            <video
+                width="640"
+                height="480"
+                controls
+                preload="auto"
+                loop
+                poster="myVideoPoster.png"
+            >
+            <source src="video/myVideo.sp8" type="video/super8" />
+            <source src="video/myVideo.mp4" type="video/mp4" />
+            <p>
+                <b>Download Video:</b>
+                MP4 Format
+                <a href="myVideo.mp4">"MP4"</a>
+            </p>
+        </video>
+
+
+                ### Audio and Video tags work almost identically ###
+
+>. The audio tag works similarly as the video tag, with the same attributes, that is excluding height, width and poster.
+>. The key difference is that audio has no playback area for visible content.
+
+
+                ### Responsive HTML5 video and iframes ###
+
+>. To fix HTML video embedding, we can simply remove height and width attributes in the markup.
+       // Example:
+            if width="640" height="480"
+             video {
+                max-width: 100%;
+                height: auto;
+             }
+>. Note, this works well for files that we might be hosting locally, hence doesnt solve the problem of videos embedded within an iframe(e.g YouTube, vimeo, et al).
+
+>. To solve this problem , we can use the https://embedresponsively.com/ and paste your iframe URL in, it will spit out a simple chunk of code into your page.
+             // Example:
 
 
 
+               ### The modern way to embed iframes and keep aspect ratio ###
+
+>. If you only need to support more modern browsers, you can set the aspect ratio of something like an iframe with the aspect-ratio property.
+>. For an iframe we want to keep it at 16:9 ratio such as YouTube video.
+            // Example:
+            .iframe-16-9 {
+                aspect-ratio: 16/9;
+                max-width: 100%;
+            }
+
+>. The aspect-ratio property is not limited to iframes- as you can use it on any box in CSS that ne wants to maintain certain proportions.
+         
+                ### The Loading Attribute ###
+
+>. 
 
 
+               ### The <dialog> Element ###
 
-
-
+>. 
 
 
 
