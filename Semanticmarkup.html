@@ -373,42 +373,26 @@ government internationally.
          
                 ### The Loading Attribute ###
 
->. 
+>. This attribute specifies whether a browser should load an image immediately or to defer loading of off-screen until e.g
+the user scrolls near them.
+    // Syntax
+       <img src="" loading="lazy or eager"
+
+       >. eager: This is the default. which loads images immediately
+       >.lazy: which defer loading of images until some conditions are met
 
 
                ### The <dialog> Element ###
 
->. 
+>. The dialog element represents a transitory part of an application, in the form of a small window("dialog box"), which the user interacts with to perform a task or gather information.
+>. Once done the dialog can be automatically closed by the application or manually closed by the user.
 
+>. More: https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element
+>. Sources: https://web.dev/learn/html/dialog/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+>. Dialogs can either be modal(only content in the dialog can be interacted with) or non-modal(it's still possible to interact with content outside the dialog).
+>. Modals dialogs are displayed on top of the rest of the page content, while the rest of the page content is inert, and by default obscured
+by a semi-transparent backdrop.
 
 
 
