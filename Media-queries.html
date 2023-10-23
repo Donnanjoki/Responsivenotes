@@ -1,23 +1,55 @@
 <!--
  Chapter 3: Media Queries and Container Queries
 
+>. Media queries allows us to target specific CSS styles depending on the capabilities of a device.
+>. We can change the way content is displayed based on things such as:
+        a]] Viewport width
+        b]] screen aspect ratio
+        c]] orientation (landscape or portrait)
 
 
+    ### The meta viewport tag ###
+
+>. The meta tag was introduced by Apple in 2007, and its purpose was to provide a way for web pages to communicate to mobile browsers how they would like the web browsers to render the page.
+>. Example: 
+     <meta name="viewport" content="initial-scale=2.0,width=device-width" />
+
+       // breakdown:
+           1. the name "viewport" tell the browser this tag is dealing with the viewport.
+           2. the content="initial-scale=2.0" states to scale the content to twice its size.
+           3. the width=device-width part tells the browser that the width of the page should be equal to the device-width
+
+>.The meta tag can also be used to control the amount a user can zoom in and out of a page.
+   // Example: Allows users to go as large as three times the device and small as half the device width.
+        <meta name="viewport" content="width=device-width, maximum-scale=3, minimum scale=0.5"
+        />
+
+        // You can also disable users form zooming at all:
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no"
+        />
+
+>. Note zooming is an important accessibility requirement for users with reduced visual acuity, hence do no add feature "user-scalable-no".
+
+   // Example:
+   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+>. In the above example the scale is changed to 1.0, meaning that the mobile browser will render the page at 100% percent of the width of all the supported mobile browsers.
 
 
+   ### Why media queries are needed for a responsive web design ###
+
+>. A media query consists of a media type and zero or more expressions that check for the conditions of
+particular media features. Among the media features that can be used in media queries are ‘width’,
+‘height’, and ‘color’. By using media queries, presentations can be tailored to a specific range of output
+devices without changing the content itself
+
+>. Media queries are thought as the basic conditional logic for css.
 
 
+     ### Basic conditional logic in CSS ###
 
-
-
-
-
-
-
-
-
-
-
+>. True programming languages all have some facility in which one of two or more possible situations is catered for.
+>. This is usually taken care of by some conditional logic known as control flow - typified by an if/else statement.
 
 
 
