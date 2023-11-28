@@ -58,7 +58,227 @@ devices without changing the content itself
 
 >. A default color in the mediaq. example is defined first, outside of a media query. Then when any of the media queries are "true", the styles inside the media query overwrite the default.
 
->. The basic syntax of a media query is simple when you get used to it. You use the @media at rule to communicate a media query and then write the media test in parentheses. The test must pass in order for the styles within the curly braces to be applied.
+>. The basic syntax of a media query is simple when you get used to it. You use the @media at rule to communicate a media query and then write the media test in parentheses. 
+The test must pass in order for the styles within the curly braces to be applied.
+
+a]] Media queries in link tags
+
+>.Here the media query is found on the head section of the markup
+ // Example:
+        <link 
+            rel="stylesheet"
+            media="screen and (orientation: portrait)"
+            href="potrait-screen.css"
+            />
+            This media query is asking. "Are you screen and is your orientation potrait?"
+
+
+  b]] Media query on an @import at-rule
+
+  >. Here the same rule still applies but on an @import statement:
+       @import url("portrait-screen.css") screen and (orientation: portrait);
+
+
+### Note: By using the @import at-rule in css makes the browser request the relevant file from the network hence incresing the number of HTTP requests, alternatively affecting the load speed.
+
+
+c]] Media queries in a css file
+
+// Example:
+    @media screen and (orientation: portrait) {
+      /* style here*/
+    }
+
+d]] Inverting media query logic
+
+>. You can reverse the logic of any media query expression by adding not to the beginning of the media query.
+  /// Example:
+      <link
+          rel="stylesheet"
+          media="not screen and (orientation:portrait)"
+          href="potrait-screen.css"
+      />
+
+
+e]] Combining media queries
+
+>. Its possible to string multiple expressions together.
+
+// Example:
+  <link
+      rel="stylesheet"
+      media="screen and (orientation: portrait) and (min-width: 800px)"
+      href="800wide-potrait-scree.css"
+   />   
+
+ // Example: @media (min-width: 30em) and (orientation: landscape) {
+   /**/
+ }  
+
+ or to limit style to devices with a screen, chain the media feature to the screen media type
+
+ @media screen and (min-width: 30em) and (orientation: landscape) {
+   /* */
+ }
+
+
+   ## Note ##
+
+>.Unless you want to target styles to particular media types, just leave the screen and
+part out.
+    // Example: @media (min-width: 750px) {
+      /*styles*/
+    }
+
+>. Media queries are case-sensitive.
+>. Media types: applies for: all, print, screen. The type is optional(assumed to be all) except when using the not or only logical operator.
+>. You can also combine multiple media queries into a single rule by separating them with commas. 
+
+
+
+g]] Creating complex media queries
+
+>. Sometimes you may want to create a media query that depends on multiple conditions. 
+This is where the logical operators come in: not, and, and only. Furthermore, you can combine multiple media queries into a comma-separated list;
+ this allows you to apply the same styles in different situations. 
+
+>. The "and" operator can be used to combine multiple media features into a single media query.
+>. While the not operator negates a media query. The only operator prevents older browsers from applying the styles.
+
+>. In most cases, the all media type is used by default when no other type is specified. However, if you use the not or only operators, you must explicitly specify a media type. 
+
+
+
+
+h]] Testing for multiple queries 
+>. You can use a comma-separated list to apply styles when the user's device matches any of the various media types, features or states.
+    // Example:
+        @media (min-height: 680px), screen and (orientation: portrait) {
+         /* style*/
+        }
+
+#### Improving Compatibility with older browsers ###
+>. The "only" keyword prevents older browsers that do not support media queries with media features from applying the given styles.
+>. It has no effect on modern browsers.
+
+
+
+
+### What Media queries test for ###
+
+1] width: the viewport width
+2] height:  the viewport height
+3] orientation: this capability checks whether a device is portrait or landscape in orientation. 
+4] aspect-ratio:  the ratio of width to height based on the viewport width and height. A 16:9 widescreen display can be written as aspect-ration: 16/9.
+5] color: The number of bits per color component. E.g min-colo: 16 will check that the device has 16-bit color.
+6] color-index: The number of entries in the color lookup table (the table is how a device
+               changes one set of colors to another) of the device. Values must be numbers and cannot
+               be negative.
+7] monochrome: This capability tests how many bits per pixel are in a monochrome frame buffer.  The value would be an integer and cannot be negative e.g. monochrome: 2
+8] resolution: This capability can be used to test screen or print resolution; for example,
+              min-resolution: 300dpi. It can also accept measurements in dots per centimeter; for
+              example, min-resolution: 118dpcm.
+9] scan: This can be either progressive or interlace, features largely particular to TVs. For
+         example, a 720p HD TV (the “p” part of 720p indicates “progressive”) could be targeted
+         with scan: progressive, while a 1080i HD TV (the “i” part of 1080i indicates “interlaced”)
+could    be targeted with scan: interlace.
+10 grid:  This capability indicates whether or not the device is grid orbitmap-based.
+
+
+>. The above features except grid and scan can be prefixed with max or min to create ranges.
+   // Example: @import url("tiny.css") screen and (min-width: 200px) and (max-width: 360px);
+
+
+
+
+   ### Interaction Media Features ###
+
+>. These features are concerned with pointing devices and hover capability
+    
+     a]] The pointer media feature 
+
+>. There are three possible states for the pointer feature: that is none, coarse and fine.
+
+>. A coarse pointer might be a finger on a touchscreen device. Or a cursor from a games console that doesn't have the fine-grained control of
+ something like a mouse 
+    // Example: @media (pointer: coarse) {
+      /* styles for when coarse pointer is present*/
+    }
+
+>. A fine pointer device might be a mouse but could also be a a stylus pen or any future fine-grained
+pointer mechanism: 
+    // Example: 
+       @media (pointer: fine) {
+         /* styles for when fine pointer is present*/
+       }
+
+
+>. Note: The safest bet is always to assume users are using touch-based input and size user
+interface elements accordingly. That way, even if they are using a mouse they will
+have no difficulty using the interface with ease. If, however, you assume mouse
+input and don’t provide affordance for coarse pointers, it might make for a difficult
+user experience
+
+
+
+
+   b]] The hover media feature
+
+>. This tests the device’s ability to hover over elements on the screen. If the user has multiple inputs at their disposal (touch and mouse, for example),
+characteristics of the primary input are used. Here are the possible values and example code:
+
+>. For users that have no ability to hover, we can target styles at them with a value of none:
+
+// Example: @media (hover: none) {
+   /* styles for when the users cannot hover*/
+}
+
+>. or choose to make the non-hover scenario the default then add hover styles for devices that take advantage of them.
+ 
+@media (hover) {
+   /* styles for when user can hover*/
+}
+
+
+     ### Preference media feature ###
+
+a]] The prefers-color-scheme media feature
+
+      
+>. These cater to enhancing accessibility.
+>. In the last couple of years, popular operating systems for both desktop and mobile computers
+have given users the option of a dark mode. 
+>. To supplement this, operating systems expose this user preference to the browser by way of the prefers-color-scheme media feature.
+>. At present there are three possible preferences: light, dark, and no-preference. 
+
+    // Example: body {
+      background-color: #e4e4e4;
+      color: #545454;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+         background-color: #333;
+         color: #ddd;
+      }
+    }
+
+
+    b]] The prefers-reduced-motion feature
+
+>. If a user has set their device to minimize the amount of motion it provides in its interface and sys-
+tem interactions, this information is exposed to CSS via the prefers-reduced-motion media query.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
