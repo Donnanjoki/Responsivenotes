@@ -1,0 +1,236 @@
+<!--
+CHAPTER 7: CSS COLOR
+********************
+
+## Color concepts and terminology ##
+
+>. Color Space is a mathematical representation of colors.
+    >> For the print world there's the CMYK (Cyan, Magenta, Yellow and Black, while fot the web world there is the sRGB which is the s
+     standard color space on the web).
+
+>. Gamut - refers to the range of possible colors that a device can display.
+
+
+## The current state of CSS Color ##
+       As of 2022
+1] All monitors and browsers can display sRGB colors and there are various syntaxes to describe them in CSS:
+    hex (e.g, #000), rgb(0,0,0), hsl(0 0% 0%).
+
+2] There are also colors that many modern monitors can display but not all browsers currently
+support. This category of colors is typically dealt with in CSS with the color() function
+to pass a custom color space (typically display-P3) to CSS, or using LCH/Lab.
+
+3] There is a category of colors that humans can see, yet few (if any?) monitors can display.
+CSS can now describe such colors with LCH/Lab.
+
+4] Right now in 2022, only safari browser supports lch(), lab() and color().
+
+
+
+
+
+
+RGB Color
+>. RED, GREEN and BLUE 
+
+  // Example:
+.redness {
+    color: #fe0208;
+}
+<note first two digits are red value in hexadecimal, the next tw0 are green and the last two are blue.>
+
+or representing the same color in RGB functional notation in values range 0 - 255
+
+.redness {
+    color: rgb(255, 2, 8);
+}
+
+
+HSL Color (HSL works on a 360 degrees color wheel)
+>. HUE, SATURATION and LIGHTNESS
+>. Young Guys Can Be Messy Rascals : yellow is at 60°, green is at 120°, cyan is at 180°, blue is at 240°, magenta is at 300°, and finally,
+red is at 360°.
+
+// Example:
+   .redness {
+    color: hsl(359, 99%. 50%);
+   }
+
+
+### Alpha Channels ###
+>. This controls the transparency or opacity of color.
+>. For that need with hex, RGB and HSL, its possible to define the alpha channel.
+
+     A]] Alpha with hex
+     >. Here you can define the alpha channel with a four-digit or eight-digit syntax.
+          // example:
+          background-color: #0007;
+                 or
+          background-color: #00000077;
+
+## Alpha with functional notation ###
+>. Using the functional notation, yoi can define an alpha chanel like so with HSL.
+     .redness-alpha {
+        color: hsl(359, 99%, 50%, 0.5);
+     }
+             or
+    .redness-alpha {
+        color: hsl(359, 99%, 50%, 50%);
+    }
+
+>. For RGB syntax follow this convention;
+   .redness-alpha-rgba {
+    color: rgb(254, 2, 8, 0.8);
+   }
+
+>. With new css capabilities we can now do this;
+     .redness-alpha-rgb {
+        color: rgb(254, 2, 8, 0.8);
+     }
+
+
+     ## Space-separated functional color notation##
+
+>. Unless you need to support old browsers, you can, and probably should, write colors using the
+newer space-separated syntax.
+
+>. In the space-separated color-values, if you need to add an alpha channel, add a forward slash (/) before adding the alpha as either
+a decimal value or a percentage.
+
+  // Example:
+     .redness-alpha-rgba {
+        color: rgb(254 2 8 /0.8);
+     }
+
+             or
+
+    .redness-alpha-rgba {
+        color: rgb(254 2 8 / 80%);
+    }
+
+NOTE:: It used to be necessary to define RGB or HSL colors with an alpha channel using the
+functional rgba() or hsla() formats (note the appended a for alpha). However,
+that’s no longer needed unless you need to support a very old browser.
+
+
+NOTE:; There's no real best color format just best format for a particular job.
+>. You can use certain formats to get certain style of gradients or the typical hex values for everyday use.
+
+
+### @media (color-gamut) media query ###
+
+>. This media query lets us test for the support of certain colors on the host device.
+   // Example: @media (color-gamut: rec2020) {
+    .thing {
+        color: color(display-p3 0 1 1);
+    }
+   }
+
+
+      ### LCH with the lch()function ###
+
+>. Lab/lCH is capable are designed to be able to express all of human vision, even if our monitors are currently not capable of doing that.
+>. LCH is an abbreviation of Lightness, Chroma, Hue. It is the same color space as Lab, but using
+polar coordinates. 
+   >> polar coordinates is a way of describing how far something is from a reference point.
+
+   // Example: background-color: lch (50% 132 43);
+
+>. Like the other functional color notations, you can add a forward slash (/) and then add an alpha
+channel as a value between 0 and 1 or a percentage
+
+>. Takeaway: Arguably one of the more important things to take from LCH/Lab is that the Lightness is designed
+to look the same across different colors, something that the lightness of HSL does not do. 
+
+
+
+  ## Fallback for older browsers ##
+
+>. To simply provide a fallback for older browsers, just write the standard format first and then the newer syntax straight after.
+
+// Example; 
+  >. So if we wanted that “super green” P3 green but know that we have a nice P3 version for browsers
+and hardware that don’t support P3 (note I’m also using the older syntax with commas for the
+sake of even older browsers):
+       background-color: rgb(0, 255,0);
+       background-color: color(display-p3 0 1 0);
+
+       or 
+
+>. We could use @supports version
+   @supports (color(display-p3 0 1 0)) {
+    background-color: color(display-p3 0 1 0);
+   }
+
+
+   ### The color-mix() function ###
+
+>. This function lets us specify a color space to mix in, and then two colors to mix in that color space.
+  // Example;
+     .mix {
+        background-color: color-mix(in lch gold 50%, orange);
+     }
+
+
+
+### The color-contrast() function ###
+
+>. The color-contrast() function lets you specify a color, then at least another two colors, to effectively compete for the title of “Most
+Contrasting Color.” That’s not a real thing by the way, but it does mean a huge difference to day-to-day life as a developer trying to ensure you create suitably contrasting sites for accessibility.
+
+// Example:
+    .header-text {
+        background-color: #333;
+        color: color-contrast(#333 vs #666, #545454,#777, #f90);
+    }
+
+>. In the above example; we set the background to a dark gray (#333) to test the contrast against. Then we
+use the vs keyword to separate the colors that are going to be tested as the color with the highest
+contrast against that first color. Note that currently, in the experimental version of the syntax,
+you need a comma after each extra color you want to test against.
+>. The winner is orange with the hex code of #f90
+
+
+>. If you are trying to achieve AA WCAG accessibility compliance, you can pass a target contrast ration like so;
+    // Example:
+
+         .header-text {
+            background-color: #333;
+            color: color-contrast(#333 vs #666, #545454, #777, #f90 to 4.5);
+         }
+  
+                 or
+
+        .header-text {
+            background-color: #333;
+            color: color-contrast(#333 vs #666, #545454, #777. #f90 to AA)
+        }
+
+>. The AA here means a contrast ratio of 4.5:1, which is the ratio required for AA WCAG accessibility with text contrast. 
+>. Note: There is no implementation that currently supports the to keyword and passing a contrast of AA or AAA; instead, it only 
+supports the number value.
+
+>. This function comes in handy when you want to use a bunch of pre-defined colors, while addressing accessibility concerns.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

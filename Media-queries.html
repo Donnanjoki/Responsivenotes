@@ -266,18 +266,49 @@ have given users the option of a dark mode.
 
     b]] The prefers-reduced-motion feature
 
->. If a user has set their device to minimize the amount of motion it provides in its interface and sys-
-tem interactions, this information is exposed to CSS via the prefers-reduced-motion media query.
+>. If a user has set their device to minimize the amount of motion it provides in its interface and system 
+interactions, this information is exposed to CSS via the prefers-reduced-motion media query.
+
+>. There are only two settings: no-preference or reduce.
+
+>. If you find yourself writing more than the occasional animation or transition, it’s well worth
+wrapping such styles up in a no-preference variant like this:
+
+@media (prefers-reduced-motion: no-preference) {
+   /*animation code here*/
+}
+
+>. If you want subtler animation to your users, you could write your animation code, then provide another that overwrites the first for users that would
+like a subtler version
+ .ele {
+   animation: bezerk 1s;
+ }
+@media (prefers-reduced-motion) {
+   .ele {
+      animation: subtle 1s;
+   }
+}
+
+>.    This media query is a great tool for users sensitive to animations and movements, whether for medical reasons such as vestibular motion disorders or 
+purely from a personal preference pov.
 
 
+### Container queries ###
 
+>. When working with responsive designs, its the width of the container that we are typically interested in.
 
+>. Note confirm is updates have been passed for browser user on container queries.
 
+>. In order for containers to be query-able, we first need to tell the browser how the container should be "contained".
 
+>. Note the container property is actually a shorthand for setting two properties: container-name and container-type
 
-
-
-
+// Example:
+   @container main (inline-size > 500px) {
+      .thing {
+         /*styles */
+      }
+   }
 
 
 
