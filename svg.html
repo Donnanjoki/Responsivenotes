@@ -1,19 +1,49 @@
 <!--
 
-CHAPTER 10 - SVG
+CHAPTER 10 - SVG I(Scalable Vector Graphics)
 ******************
 
+>. SVG aids in responsive web design and providing pin-sharp and future-proof graphical assets for all screen resolutions.
 
+>. With graphics saved in JPEG, GIF or PNG the shortcomings limit these images definitions.
 
+>. SVG is a language for describing two-dimensional graphics in XML [XML10]. SVG allows for three
+types of graphic objects: vector graphic shapes (for paths consisting of straight lines and curves),
+images, and text.
 
+>. SVG allows two-dimensional images to be described in code as vector points, hence these points can scale to any size without loss of fidelity.
+>. Also in terms of data SVGs tend to be tiny compared to JPEG, GIFs or PNG file.
 
 
+### The root SVG element ###
+>. The root SVG element has attributes for width, height and viewBox.
+    <svg width="198px" height="188px" viewBox="0 0 198 188"
 
+>> The width and height of the SVG effectively create a viewport. 
+>. While the viewBox defines the coordinate system in which all the shapes of the SVG are governed.
+   >> You can think of the viewBox values 0 0 198 188 as describing the top-left and
+     bottom-right areas of a rectangle. The first two values, known technically as min-x and min-y,
+     describe the top-left corner, while the second two, known technically as width and height, de-
+     scribe the bottom-right corner. 
 
+     >> Having the viewBox attribute allows you to do things like zoom an image in or out
 
 
+   ### The defs tag ###
+      // Example: <defs></defs>
 
+>. Note, despite being empty, they are an important element as they are used to store definitions of all manner of reusable content
+such as gradients, symbols, paths and more.
 
+    ### SVG shapes ###
+>. SVGs have a number of ready-made shapes such as
+      1] path
+      2] rect
+      3] circle
+      4] ellipse
+      5] line
+      6] polyline
+      7] polygon
 
 
 
@@ -97,12 +127,27 @@ CHAPTER 10 - SVG
 
 
 
+    ### SVG Implementation Tips ###
 
+ 1]] If you have no need to animate your SVGs, opt for an image sprite of your assets or a data
+   URI style sheet. It’s far easier to provide fallback assets and they almost always perform
+   better from a performance perspective
 
+2]] Automate as many steps in the asset creation process as possible; this reduces human
+    error and produces predictable results faster.
 
+3]] To insert static SVGs in a project, pick a single delivery mechanism and stick to it (image
+    sprite, data URI, or inline). It can become a burden to produce some assets one way and
+    some another and maintain the various implementations.
 
+4]] There is no easy “one size fits all” choice with SVG animation. For occasional and simple
+   animations, use CSS. For complex interactive or timeline-style animations, lean on a
+   proven library such as GreenSock. Or, look at using the JavaScript Web Animations API.
 
 
+   >. Note: These are just guides, not gospel. There will be times when you need to make a choice that may
+           seem counter-intuitive to conventional wisdom. But at least if you have taken in the details here,
+           you will be able to make informed choices when it comes to working with SVG.
 
 
 
