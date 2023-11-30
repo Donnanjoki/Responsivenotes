@@ -29,11 +29,25 @@ images, and text.
      >> Having the viewBox attribute allows you to do things like zoom an image in or out
 
 
+
+    ### g element ###
+
+>. The g element is used to group other elements together.
+>. or example, if you were drawing an SVG
+of a car, you might group the shapes that make up an entire wheel inside a g tag.
+
+  // <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-
+rule="evenodd" sketch:type="MSPage">
+
+
+
    ### The defs tag ###
       // Example: <defs></defs>
 
 >. Note, despite being empty, they are an important element as they are used to store definitions of all manner of reusable content
 such as gradients, symbols, paths and more.
+
+
 
     ### SVG shapes ###
 >. SVGs have a number of ready-made shapes such as
@@ -46,24 +60,92 @@ such as gradients, symbols, paths and more.
       7] polygon
 
 
+  ### Inserting SVGs into your web pages ###
 
+   a]] Using an img tag
+   ********************
+>. This makes the svg behave more or less like any other image, hence there isn't much else to say.
+   // <img src="mySconeVector.svg" alt="Amazing line art of a scone" />
 
+b]] Using an object tag
+************************\
+>.The object tag is the container recommended by the W3C for holding non-HTML content in a
+web page.
+  // Example: <object data="img/svgfile.svg" type="image/svg+xml">
+                     <span class="fallback-info">Your browser doesn't support SVG</span>
+  </object>
 
+>. The data attribute is where you link out to the SVG asset in the same manner you would link to
+any other asset. The type attribute describes the MIME (internet media type) type relevant to
+the content. 
+>. In this instance, image/svg+xml is the MIME type to indicate that the data is SVG.
+You can add a width and height attribute too if you want to constrain the size of the SVG with
+this container
 
+>. With an object tag, it can be accessed with javascript and also provides a simple mechanism for when
+the browser doesn't understand data type.
 
 
+c]] Inserting an SVG as a background image 
+*******************************************
+>. SVGs can be used as background images in CSS, much the same as any other image format (PNG,
+JPG, or GIF).
 
+    // Example: .item {
+        background-image: url('image.svg');
+    }
 
+>. If you need be that you have to support browsers that don't support SVGs then we can use css feature queries.
+    .item {
+        background-image: url('image.png');
+    }
+    @supports (fill: black) {
+        .item {
+            background-image: url(image.svg);
+        }
+    }
 
+>. The @supports rule works here because fill is an SVG property, so if the browser understands
+that, it will take the lower rule over the first
 
 
 
+   ### Generating image sprites ###
 
+>. A good recommendation tool for generating image sprites or data URI assets is iconizr - (https://iconizr.com)
+>. This tool gives you complete control of your resultant SVG and fallback PNG assets.
+>. You can have the SVGs and fallback PNG files output as data URIs
+or image sprites, and it even includes the requisite JavaScript snippet for loading the correct asset
+if you opt for data URIs.
 
+** Note: a better way to animate SVGs background images dynamically or to inject the vales via javascript is to opt in for inserting 
+SVG data "inline" into HTML.
 
 
+    
+    ### Inserting an SVG inline ### 
 
+>. Inserting SVG as markup into your documents is probably the most versatile option in terms of
+accessing the broadest range of SVG features.
+  // Example: 
+     <div>
+        <h3> Inserted 'inline': </h3>
+        <span class="inlineSVG">
+            <svg id="svgInline" width="198" height="188" viewBox="0 0 198 188"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.
+            w3.org/1999/xlink">
+         <title>Star 1</title>
+             <g class="star_Wrapper" fill="none" fill-rule="evenodd">
+                 <path id="star_Path" stroke="#979797" stroke-width="3"
+                   fill="#F8E81C" d="M99 154l-58.78 30.902 11.227-65.45L3.894
+                    73.097l65.717-9.55L99 4l29.39 59.55 65.716 9.548-47.553
+                     46.353 11.226 65.452z" />
+            </g>
+        </svg>
+        </span>
+     </div>
 
+>. Note if you remove the width and height attributes on the svg element, the svg will scale fluidly to fit the containing element.
 
 
 
@@ -71,16 +153,20 @@ such as gradients, symbols, paths and more.
 
 
 
+    #### What you can do with SVG insertion method (inline, object, background and img) ####
 
+>. SVG differ
 
 
 
 
+s
 
 
 
 
 
+s
 
 
 
@@ -97,33 +183,15 @@ such as gradients, symbols, paths and more.
 
 
 
+    ### Optimizing SVGs ###
 
+>. As conscientious developers, we want to ensure that assets are as small as possible. The easiest
+way to do this with SVGs is to make use of automation tools that can optimize various particulars
+of SVG documents.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+>. You can use tools such as; SVG0 - (https://github.com/svg/svgo)
+                               SVGOMG - (https://jakearchibald.github.io/svgomg/).
+                               iconizr (https://iconizr.com) 
 
 
 
