@@ -155,26 +155,140 @@ accessing the broadest range of SVG features.
 
     #### What you can do with SVG insertion method (inline, object, background and img) ####
 
->. SVG differ
+>. SVG differ  from other graphical assets, and can behave differently depending on the way they have been inserted into a page.
+
+>. There are 4 main ways to place SVG onto a page.
+
+1] inside an img tag
+2] inside an object tag
+3] As a background-image
+4] inline
+
+## Caveats to consider
+*************************
+
+1] When using an SVG inside an object, you can use an external style sheet to style the SVG, but you have to link to that style sheet within the SVG.
+2] You can use SVGs in an external asset (which is cacheable), although those external assests cannot be manipulated by javascript.
+3] A media query inside the style section of an inlined SVG works on the size of the document it lives and not the size of the SVG itself
+
+
+## Note>. SVGs will always render as sharp as the viewing device will allow, and regardless of the manner of insertion.
+
+>. Resolution independence is typically a reason enough to use SVGs.
 
 
 
 
-s
+
+### SMIL Animation ###
+
+>. SMIL - Synchronized Multimedia Integration Language ; SMIL animation is a way to define animations for an SVG within the SVG document itself.
+
+   // Example: 
+   < g class="star-wrapper" fill="none" fill-rule="evenodd">
+      <animate
+         xlink:href="#star_path"
+         attributeName="fill"
+         attributeType="XML"
+         begin="Os"
+         dur= "2s"
+         fill="freeze"
+         from="#F8E81C"
+         to="#14805e"
+         />
+         <path
+         id="star_Path"
+        stroke="#979797"
+        stroke-width="3"
+        fill="#F8E81C"
+        d="M99 154l-58.78 30.902 11.227-65.45L3.894 73.097l65.717-9.55L99
+        4l29.39 59.55 65.716 9.548-47.553 46.353 11.226 65.452z"
+        />
+       </g>
+
+
+>. Note theoretically, SMIL is good to use for some use cases, I tend to quarantine it mentally
+in a “use as a last resort” technique.
+
+
+
+
+     ### STYLING an SVG with an external style sheet ###
+
+>. Note styling SVG with external CSS isn't possible when the SVG is included via an img tag or as a background-image, apart
+from Internet Explorer.
+>. Hence its only possible when SVGs are inserted via an object tag or inline.
+
+>. There ate two syntaxes to link external sheet from an SVG.
+    A] In this you typically add this in the defs section.
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+    B] <?xml-stylesheet href="style.css" type="text/css"?>
+    then add the above in your file.
+
+    <? xml-stylesheet href="styles.css type="text/css"?>
+    <svg
+       width="198"
+       height="188"
+       viewBox="0 0 198 188"
+       xmlns="http://www.w3.org/2000/svg"
+       xmls:xlink="http://www.w3.org/1999/xlink"
 
 
 
 
 
-s
+     ### STYLING an SVG with an internal styles ###
+
+>. They should be placed within the defs element. As SVG is XML- based, it's safe to '
+to include the Character Data Marker (CDATA).
+>. The CDATA tells the browser that the info within the character data can be interpreted as XML markup, but should not.
+
+   // Example 
+   <defs>
+    <style type="text/css">
+        <![CDATA[
+              #star_path {
+                stroke: red;
+              }
+              ]]>
+    </style>
+</defs>
 
 
 
 
+           ### ANIMATING SVGs ###
+
+           1]] with Css
+
+           >. You can get quite far animating SVGs with CSS animations. However, when you want to add in-
+teractivity or synchronize several events, it’s generally best to lean on JavaScript. And the good
+news is that there are great libraries that make animating SVGs really easy.
+
+           2]] with Javascript
+
+>. With an SVG inserted into the page via an object tag or inline, it’s possible to manipulate the SVG
+directly or indirectly with JavaScript.
+
+>. By indirectly it means that its possible with JS to change a class on or above the SVG that would cause aa CSS animation to start.
+    // Example:
+         svg {
+            /* no animation*/
+         }
+
+         .added-with-js svg {
+            /* animation */
+         }
 
 
+>. If directly: lets say you want to animate one or two things independently, then you can decide to either it would be lighter code-wise to write the Javascript by hand
 
+>. Additionally if you need to animate lots of elements or synchronize the animation of elements as if on a timelines, then JS libraries can be handy.
+>. To note; you will need to judge whether the weight of including the library in your page can be justified for the goal you are trying to achieve.
+   Note you can use GreenSock  an animation library which simplifies the animation.
 
+>. 
 
 
 
