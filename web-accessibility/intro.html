@@ -12,6 +12,7 @@ interact on the web.
 5. Integrating accessibility into your design and development processes and tips.
 
 
+########################### MODULE 1 ###############################################################
 
 World Wide Web consortium - W3C's primary activity is to develop protocols and guidelines that ensure long-term growth for the web.
 >. Their mission is to safeguard the openness, accessibility and freedom of the World Wide Web from a technical perspective.
@@ -50,6 +51,11 @@ text and can process spoken language better
 
 Note: some disabilities are hidden from the naked eye- these are inclusive of cognitive and learning disabilities, RSI(repetitive strain injury), and color blindness.
 
+>. Many people with low vision do not use a screen reader -- including people who are losing their vision from progressive eye conditions later life. 
+There are many more people with low vision than there are people who are blind.
+
+>. Some people with "tunnel vision" and good visual acuity need small text with little space between lines.
+
 Accessibility deals with all different types of disabilities.
 
     Example people RSI opt to use speech instead of keyboard, the deaf and sighted - opt to use caption and transcripts
@@ -79,7 +85,8 @@ Things to notice:
 
  >. The WEB is increasingly becoming an important resource hub among different sectors such as;
  government info and services, healthcare, education and training, commerce, news, workplace interaction, recreation, entertainment among others.
- To provide equal access and equal opportunity to people with diverse abilities.
+ 
+ >. To provide equal access and equal opportunity to people with diverse abilities.
  Additionally, it is a  basic human rights as per the Access to information and communication technologies defined by the united nations convention
  on the Rights of Persons with Disabilities (UN CRPD)
 
@@ -145,17 +152,33 @@ maintain a focus on people with disabilities.
 
   ### Web Accessibility Perspectives ###
 
-    A]] Video Captions
-    B]] Color with Contrast
-    C]] Voice Recognition
-    D]] Text-to-Voice
-    E]] Clear layout and design
-    F]] Notification & feedback
-    G]] Large Links Buttons and controls
-    H]] Customizable Text
-    I]] Understandable Content
-    J]] Keyboard Capability
+    A]] Video Captions       - videos isn't about pictures but also sound, hence the need for captions to make videos accessible.
 
+    B]] Color with Contrast  - Good design means sufficient contrast between foreground and background colors
+                             - Note if it was important to be seen then it needs to be clear enough
+                             - Factor in different lighting conditions, additionally people with low contrast sensitivity
+
+    C]] Voice Recognition    - take into account situations where speech is more efficient and makes things easier e.g temporary limitations, dictating emails, placing an order
+
+    D]] Text-to-Voice        - situations where the user is multi-tasking, difficulty reading, individuals with dyslexia, visually impaired.
+
+    E]] Clear layout and design - bad design and poor layout makes finding information difficult and impossible for people with visual impairment,
+                                  Additionally, it confuses people with cognitive and learning disability; and impacts those not confident around computers.
+                                - This can range from poor UI, lack of clear heading, navigation bars, lack of consistent styling
+
+    F]] Notification & feedback  - Notifications and feedbacks need to be clear; they need to be predictable and understandable.
+                                 - avoid using complex or confusing error messages.
+
+    G]] Large Links Buttons and controls - Consider those with situational limitations and reduced dexterity
+                                        - responsive or factor in mobile-first design
+
+    H]] Customizable Text       - What is right for you, isn't always right for everyone else.
+                                - Hence consider tinkering with font color, spacing and size.
+
+    I]] Understandable Content   - 
+
+    J]] Keyboard Capability    - Whether out of preference or circumstance websites and applications need to be operable via keyboard
+                               - This can be due to temporary mobility, permanent disability (requiring mouth-stick to type) or a broken mouse
 
 
 
@@ -189,12 +212,270 @@ Accessibility is built in fundamentally
 >> The web is fundamentally designed to work for all people whatever their hardware, software, language,
 location or ability hence making the web accessible to people with a diverse range of hearing, movement, sight and cognitive ability meets the goal.
 
->> Accessibility is essential for developers and organizations that want to create high-quality websites and web tools, and not exclude people from using their products and services.
+>. Web accessibility is essential for some, and useful for all. 
+Note: Accessibility functionality that is needed by people with disabilities, is also used by people without disabilities.
 
+
+>> Accessibility is essential for developers and organizations that want to create high-quality websites and web tools, and not exclude people from using their products and services.
 
 !!! Accessibility is essential for some, but useful to all !!!
 
 
+
+###################################### MODULE TWO ####################################################
+        *** People and digital technology and how different types of assistive technologies and adaptive strategies interact on the web. ***
+
+
+        ### Scope ###
+        1] Recognize the broad diversity of people with disabilities
+        2]] List different types of assistive technologies and adaptive strategies
+        3] Recognize the impact of design decisions on accessibility for people
+        4]] Explain some of the inter-dependence between components of web accessibility
+
+
+
+######### Understanding Technology ##########
+
+>. Assistive Technologies: Refers to the hardware or software that enable people with disabilities to interact and engage with
+ the digital environment - such as screen reader or a switch control.
+
+
+>. Adaptive Strategies: These are techniques that people with disabilities use to interact with the digital environment such as adjusting platform and browser settings or resizing browser windows.
+     Example: Audiovisual with closed captions and audio descriptions
+
+>>> NOTE: One type of assistive technology or adaptive strategy is not necessarily neatly mapped to just one type of disability.
+          
+           Example: Screen reader can also be used people with cognitive or learning technologies not only those who are blind.
+
+>> Due to people being different, many tend to use a variety of technologies and strategies in a variety of creative ways based on their needs.
+>> Additionally, some may have multiple disabilities hence the need to combine different assistive technologies and strategies
+
+>> Both assistive and adaptive technologies may be used by everyone regardless of their ability.
+
+    Example: One of the most widely used assistive technologies globally are glasses. In the digital world the most prevalent assistive technology is the keyboard.
+
+>. Many assistive technologies that may have originated as a tool for people with disabilities have become mainstream and part of day to day.
+
+     Example: keyboard(developed as part of the typewriter by Agostino Fantoni(1802) - to enable his blind sister to write), voice recognition in phones, cars and home devices or pinch zoom on phones
+              closed captions(subtitles), and Audio description - While relied on primarily by people who are deaf or hard of hearing, they can also be used by people watching in a second language, in a noisy environment,or by people with no speakers or earphones.
+              Some sighted users may also watch programs with audio description switched on so they can cook, drive or multi-task when watching programs
+
+
+
+
+######## Physical Disabilities ##########
+
+>. Many people with physical limitations do not use a mouse hence they rely on other mechanisms such as keyboard, voice control anf other
+pointing devices to navigate and interact with the web.
+
+>. Hence its important that elements such as buttons, links, and controls are keyboard accessible and not just accessible using a mouse.
+>. Hence they are focusable and actionable using a keyboard, have a visible focus state and focus order is logical
+
+
+   A]] Keyboard Accessibility
+
+>. By default, specific HTML elements (anchors, form controls, image map areas) receive keyboard focus. 
+>. However, complex controls not directly available in HTML are often constructed with the use of “generic” HTML elements such as <span> or <div>, coupled with additional JavaScript behavior to make them interactive.
+>. These elements do not receive keyboard focus unless they are properly coded, and are therefore impossible for keyboard-only users to reach.
+
+
+>. Another issue is when the user moves a mouse over a particular element(hover) - if not coded properly the info can be lost to keyboard oly users
+
+>. Examples might be tooltips used for context sensitive help, which means keyboard only.
+         >> On touch-screen devices, a tooltip is displayed upon long-pressing—i.e., tapping and holding—an element.[1] Some smartphones have alternative input methods such as a stylus, which can show tooltips when hovering above the screen. 
+         >> Microsoft's tooltips feature found in its end-user documentation is named ScreenTips.[4] Apple's tooltips feature found in its developer documentation is named help tags.
+
+
+
+   B]] Lack of Visible Focus
+
+ >. A common problem for keyboard only users is visually tracking where they are in a page - unlike mouse users who can
+  move the mouse around the page and see the arrow turn into a hand when hovering over actionable elements, to indicate they are actionable. 
+
+>. To accommodate sighted keyboard only users, its important that when the keyboard focus is set to a link - the link changes appearance so the user knows where the focus is.
+    >. This is called focus state
+
+
+   C]] Focus order'
+
+>. When tabbing through content we generally expect content order to follow the visual order of the page reading. For example in English, from left to right and top to bottom.
+>. On a typical web page, we expect the order to start with the header, followed by the main navigation, page navigation, main content, and finally the footer. Within those segments of a page, we expect related content to be grouped together.
+
+>. A common issue with focus order, one that screen reader users also experience, is when a button updates or changes the content on the page but focus is not managed. 
+    >> For example, a button might be activated to open a modal dialog but the keyboard focus is not moved to the dialog. Instead, a user has to tab through all the page content until they eventually can get focus to the dialog.
+
+
+
+   D]] Skip links
+
+>. Lengthy navigation can be a challenge for sighted keyboard users as they must press the Tab key to navigate through the interactive elements that precede the item the user wants to activate. 
+
+>. For example, tabbing through main and page sub navigation before getting to a link they may want to activate in the main body of content.
+    >> For a better experience, adding a “Skip to main content link” at the start of a page can be helpful. 
+     >> This should then jump the user to the start of the main content so they don't have to tab through all the navigation links..
+
+
+   C]] Target size and movement
+
+>. Aside from visible focus states, a logical focus order, and keyboard focusable and actionable elements, there are a number of other issues that can negatively or positively affect non mouse users.
+
+>. These challenges are not just limited to keyboard usage but to users with limited dexterity may use a mouse or a finger to navigate desktop and touch screens.
+>. People who have shaky hands and find it hard to target links can struggle with fly-out menus for example.
+>. Keyboards on touch screens can be difficult to use due to proximity of letters and their small touch target size. Providing alternative ways to input text can help people complete tasks.
+
+>. A solution would be to provide  more usable alternatives such as voice input for search, dropdown menus, radio buttons or checkboxes (rather than free text input),
+support for predictive text, and pre-populating form data where possible.
+
+
+
+### Switch Controls ###
+
+>. Switch controls offer an alternative way to interact with digital content if using a mouse, keyboard, voice or gestures is not possible.
+>. People with limited or no upper body movement such as Repetitive Strain Injury, Cerebral Palsy, Amyotrophic Lateral Sclerosis (ALS) and Parkinson’s disease may use switch controls. 
+>. Additionally there are those who highly benefit such as those with cognitive and learning details.
+
+
+>. There are a wide variety of different types of switches to accommodate various needs:
+   
+     A]] Sip-and-puff switches which are triggered by sipping and puffing into a straw which then mimics tabbing and clicking.
+     B]] Button switches - which can be activated using the hand, foot or head. These can be single switches or multiple switches.
+     C]] Camera switches - which can be activated when tilting the head into a camera. Some mobile phones have this built into the accessibility settings.
+     D]] Eye Tracking - the process of measuring either the point of gaze (where one is looking) or the motion of an eye relative to the head.
+
+
+     Example: Assistive Context-Aware Toolkit  used by steve Hawking which was a speech-generating device/ or a voice output communication aid
+             
+        How did he feed info into the machine??
+              >> Due to loss of control of his nerves an infrared switch was mounted on his spectacles, which could detect the slightest twitches or movements in his cheek.
+              >> In the past, when his condition was better, he input information by pressing a clicker with his thumb.
+     
+        The interface??
+            
+             >> The next part involved forming words using the input from the infrared switch. This interface is a program called EZ Keys, developed by Words Plus Inc. 
+                It provided a software keyboard that was displayed on a tablet computer and mounted on one arm of his wheelchair, which was powered by the wheelchair batteries.
+            >> The software moved a cursor across the keyboard by either moving through columns or rows. 
+               When it reached the desired word, Hawking could stop it with a twitch of his cheek. Individual letters were selected in this way to form words and then sentences.
+            >> The software moved a cursor across the keyboard by either moving through columns or rows. 
+                When it reached the desired word, Hawking could stop it with a twitch of his cheek. 
+                Individual letters were selected in this way to form words and then sentences
+
+
+        The output??
+
+        >> The final step, probably the easiest, involved speaking the entire sentence out loud. 
+        >> To accomplish this, Hawking used a speech synthesizer developed by Speech+ that would speak the sentence once it was approved or completed. 
+        >> However, it had a recognizable accent that was described as American, Scottish, or Scandinavian.
+        >> The machine allowed him to speak and perform various other tasks, such as checking his email, browsing the internet, making notes, and using Skype to chat with his friends. 
+
+
+
+        #### Speech Input ####
+
+>. People with limited dexterity, muscular control limitations such as tremors, poor coordination or paralysis as people living with pain
+   those who ,may have arthritis, or people with missing limbs - can use speech recognition software - which enables spoke language to be translated'into text and commands 
+   by computer and devices.
+
+
+>. Instead of typing, people talk into a microphone with the words appearing where your keyboard focus is. 
+   As well as the words you speak punctuation such as “comma” or “hyphen”. When browsing Web pages using speech recognition software, it is possible to activate links, fill out forms, and activate buttons. 
+   It bypasses the need for a keyboard, mouse, or other pointing device.
+
+
+
+   ### Challenges that a speech recognition user might face are similar to that of screen reader and sighted keyboard only users; Screen readers, speech recognition software relies on underlying code to navigate;
+       These common issues are;
+           A]] Unclear links and buttons - if a button lacks visible text, a user will not know its name and how to activate it. Instead, they will have to number links on a page and select the link by its number. 
+           B]] Lack of keyboard access - if a user can not set focus on a button, it can not be activated.
+           C]] Illogical focus order - if the focus order is different from the visual order of a page, it can confuse users and they can lose track of where focus is.
+           D]] Missing or poor visible focus - when focus states are not clear it might not be possible to know where the current focus is. 
+
+
+
+   ## Take-aways from demo vide of speech input:
+           >> Code everything properly so labels and numbers methods work
+
+          1]] One thing that slows speech users down is scrolling through small dialog boxes.
+           >> It's frustrating to see dropdown menus that only have a few lines in them.
+           >> This not only adds unnecessary navigation steps, it's also cognitively more difficult
+                        KEY>> Make space for scrolling dialog boxes as large as possible.
+
+          2]] Finding Where the focus is!
+             >> Make it obvious where the focus is
+             >> One way to address this is keyboard-only and speech input testing.
+                                  KEY >> Make sure the system focus is clearly visible.
+
+          3] Finally, single key shortcuts can be a disaster for speech users because\
+              >> This is due to the fast that speech-input users speak in phrases.
+              >> And if the focus is in the wrong place, you can make a whole lot of things happen with a single phrase.
+              >> Developers can make their pages usable for speech input users  by providing a way to turn off single-key shortcuts.
+              >> They can turn the disaster into a plus by providing a way for the user to change the shortcuts.
+                                        KEY>> And if you use custom keyboard shortcuts, allow users to customize, save, and share those shortcuts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+################## Essential Components of Accessibility #####################
+
+>.  
 
 
 
