@@ -253,6 +253,8 @@ Note: Accessibility functionality that is needed by people with disabilities, is
 >> Both assistive and adaptive technologies may be used by everyone regardless of their ability.
 
     Example: One of the most widely used assistive technologies globally are glasses. In the digital world the most prevalent assistive technology is the keyboard.
+            
+    Example of other assistive technologies:  glasses with corrective lens, specialized keyboard, spell checker, screen reader, voice assistance
 
 >. Many assistive technologies that may have originated as a tool for people with disabilities have become mainstream and part of day to day.
 
@@ -265,7 +267,7 @@ Note: Accessibility functionality that is needed by people with disabilities, is
 
 ######## Physical Disabilities ##########
 
->. Many people with physical limitations do not use a mouse hence they rely on other mechanisms such as keyboard, voice control anf other
+>. Many people with physical limitations do not use a mouse hence they rely on other mechanisms such as keyboard, voice control and other
 pointing devices to navigate and interact with the web.
 
 >. Hence its important that elements such as buttons, links, and controls are keyboard accessible and not just accessible using a mouse.
@@ -486,15 +488,211 @@ NOTE: ScreenCurtain in IOS - Screen curtain switches the screen off so you can t
 
 ##### Font Size ######
 
+>. It is important that web pages support text resizing within the browser. 
+>. Text resizing is different from zoom which resizes the whole page. By going into your browser settings, you can resize text within a page independent of all other content.
+
 ##### Poor Contrast #######
+
+>. Poor color contrast can affect a wide range of users including many people with visual, cognition, and learning disabilities. 
+>.  It can also impact users on mobile devices in bright environments. Lack of sufficient contrast prevents people from being able to perceive the information that the content is attempting to convey. 
+>. This leads to barrier of interaction, as users are unable to identify their location on a page the state of the interactive elements (links and controls), read text, or identify the content of images. 
+>. The importance of good color contrast can't be understated as there are many more people with low vision than there are people who are blind.
 
 ###### Relying on color ######
 
+>. Color is a key component to web design improving not just aesthetic appeal and branding but also its usability and accessibility. However, some users have difficulty perceiving color.
+>. People with partial sight often experience limited color vision, and many older users do not see color well. In addition, people using text-only, limited-color or monochrome displays and browsers will be unable to access information that is presented only in color.
+>. Another very common barrier that stops people being able to navigate is using color alone to indicate links.
+>. Links within plain text can be problematic for users with lower color perception when the only visual indication of a link is a difference of color. 
+>. Combining the use of color with an underline or different font weight makes links more recognisable.
+
+
+
 ##### Animation and moving content ########
+
+>. People with vision, cognition and learning disabilities can find movement and animation distracting. 
+>. If content on screen is magnified, animation can take over the whole screen which is disorientating.  
+>. Common issues are banner ads containing flashing backgrounds and movement, content contained in a video clip, animated images, or continuously moving carousels.
+>. People who are photosensitive can have seizures triggered by content that flashes at certain frequencies for more than a few flashes.
+>. Content such as carousels that automatically update their content can be problematic, even when they have Pause or Stop buttons. Often these buttons are deliberately small, lack contrast and are hard to find.
 
 ###### Point of regard ########
 
 >. Point of regard is the place where you are reading and have focus.
+>. When content is zoomed in, if the place being read changes, people can get lost. 
+>. Other challenges arise when content is zoomed in proximity to related content. If related information is not grouped together, it can be lost and become unusable.
+>. This could include labels for form inputs and content separated by large areas of blank space. Interactions that change content elsewhere on screen can also be a problem.
+
+
+**********Screen Magnification ****************
+
+>. This is software that enlarges screen content, which can be used to enlarge all or part of the screen making it easier for people with 
+low vision to see text and images.
+
+>. Screen magnification is used by people with some functional vision and can be used in combination with a screen reader. 
+>. People with cognitive and learning disabilities may also use screen magnification to help zoom in on content and remove distractions such
+as banner adverts and movement.
+
+>. When zoomed in, the focus will follow the mouse pointer which is enlarged and can be customized for size and color to suit reading needs. Other features include:
+      >> Smoothing: to make text less blocky and smooth when enlarged and therefore easier to read
+      >> Crosshairs: as an alternative to the pointer as some find these easier to follow visually, especially when the size and color can be customized
+      >> Color: inversion e.g.  turning text from black-on-white to white-on-black. This can reduce screen glare and is useful for elderly people suffering from age-related macular degeneration
+
+
+>. Common screen magnification software includes ZoomText on Windows as well as built-in zoom features in Windows, MacOS, and iOS.
+>. Responsive websites are beneficial to screen magnification users - because content resizing to a single column reduces scrolling which is tiring.
+>. Why are tooltips problematic for screen magnification users - 
+Content in tooltips sometimes opens off screen and is lost
+
+
+
+
+
+*************Takeaways for screen magnification
+      ## Ensure on screen changes are obvious to screen magnification users.
+      ## Ensure key content is not contained within hover states or tooltips.
+      ## Ensure priority content is positioned consistently and where people expect to find it.
+
+
+
+######################### Hearing Disabilities #######################################
+
+>. To support people who can't hear, videos should have Closed Captions, subtitles and/or transcripts:
+    
+    A]] Closed Captions: For the same language as the spoke audio
+    B]] Subtitles: for the spoken audio translated into another language
+    C]] Transcripts: these are text version of the speech and non-speech audio information needed to understand the content
+    D]] Sign Language: uses hand and arm movement, facial expressions and body positions to convey meaning
+
+>. In some regions such as the UK, subtitles are used for both the same language as the audio and for the translation.
+
+
+####### Closed Captions ############
+
+>. Audio content, such as videos with voices and sounds that do not have captions or transcripts, are completely inaccessible to anyone with significant hearing loss. 
+>.  Closed Captions must also be in sync with the audio of the video. This means the text for the Closed Captions appear at the same time as they are spoken. 
+>Some video platforms are increasingly providing automatic captioning functionality. 
+>. This can be a great help in creating captions but currently not reliable for use by people with disabilities, especially when speakers have accents and for many languages with less support for speech recognition.
+>. The existence of captions alone is not always enough to make them usable. 
+         >> The closed captions/subtitles need to be easy to read
+         >> Have good contrast
+         >> Decent size
+         >> Set against a background so that they don't get lost in the video background that changes.
+
+####### Media Players #################
+
+>. Media players also have a role to play. Buttons to switch Closed Captions on and off should be easy to find in the player controls. 
+>. Ideally, they are grouped together with the Play/Pause, volume, rewind/forward wind and full screen buttons. 
+>. Having the button hidden within settings makes it hard to find. 
+>. Some older users may start to rely on Closed Captions more and more and may appreciate slightly larger font sizes.
+
+
+########## Text ########################
+
+For many people who are deaf, sign language is their first language. 
+>. As such, written text in closed captions or pages of written text may not be easy to read. 
+>. Some people may find it easier to watch a video with sign language alternatives over closed captions. 
+>. For pages that contain a lot of text, good use of images, icons and color to reinforce meaning can be really helpful as long as they are not relied on alone. 
+>. A good use of layout and structure (headings, lists, etc.) can also make content easier to understand. 
+
+
+
+
+########### Speech Disabilities ######################
+
+>. People may have limited or no speech for a number of reasons:
+       1]] Mutism, the inability to speak, may occur due to anxiety, brain injuries, or inability to hear and learn speech
+       2]] Speech impediments such as stuttering or Tourettes
+       3]] Degenerative disease such as Huntington's disease, dementia, Parkinson's disease, or amyotrophic lateral sclerosis
+       4]] Being deaf or hard of hearing may also affect speech
+       5]] Temporary illness such as coughs or treatment such as chemo that can affect the throat and speech
+       6]] Situational impairments such as being in a noisy environment where a website or app can't easily hear or distinguish voice or a quiet environment where it is not possible to be noisy such as in a library.
+
+
+>. While we me assume people with speech impediments don't encounter challenges on the web given the web is thought of as a visual medium, a challenging factor includes
+ voice-based services such in home devices including Alexa, Google Home, and voice control on mobile such as Siri, Google Voice, and Cortana.
+
+ >. While these are great accessible alternatives for many disabled people, they are not for people with limited or no speech. 
+
+ >. Voice-based services are a good example of an accessible enhancement but one that should not be relied on alone. It is important to include multiple ways to do a task rather than limit it to just one way.
+
+>. Ensuring the alternative to voice-based services is accessible is key. For example, if a contact us page has a phone number and a contact us form the form must be accessible. 
+>. If voice search is used on mobile apps, there must be a text based search that is also accessible as well as multiple ways to find information through links.
+
+>. Remember what is convenient for some is essential for others.
+>. People with limited or no mobility or dexterity can rely on these applications and devices, but if you are also limited in your speech abilities, you may need help.
+
+      THings to look out for on closed captions and audio descriptions
+           >> Are captions in sync?
+           >> Do the Closed Captions and Audio Descriptions convey meaning fully and accurately? 
+           >> how easy it is to find Audio Described content 
+           >> is it possible to customize the size and styles of Closed Captions.
+
+     
+
+
+########################### COGNITIVE & LEARNING DISABILITIES ########################################
+
+>.Cognition and learning is as broad as it is varied and can affect different people in very different ways. 
+>. Given it covers neurological, behavioral, mental health disorders, and aging it can affect how well people see, hear, move, speak, and understand information. 
+>. As such, any one of the challenges that affect people with vision, physical, hearing, and speech disabilities could also affect an individual with cognition and learning disabilities.
+
+>. Example; someone who is autistic or with Attention Deficit Disorder may use a screen reader to help them understand web content. 
+
+
+
+
+    >>> Commonly Encountered Challenges <<<<
+
+
+>. Complex navigation mechanisms and page layouts can be difficult to understand and use for many people.
+>. When a navigation system is vast and complex, finding the link a user may want becomes problematic, especially with the added dexterity issues that fly out menus can present as described in the section on people with physical limitations.
+>. If a site is responsive, it’s not uncommon for some users (including users with low vision) to either resize the window to a smaller mobile size, or zoom content to trigger a responsive layout where navigation is packed away behind a menu button and content is presented in a single column layout making it easier to navigate for some. 
+>. Following on from the idea that what works for some won’t work for all, this may not be the preferred strategy for someone who finds scrolling distracting. 
+   This is why sites must be flexible so people have a choice.
+
+
+>> Flexible Design
+    >.A key strategy for people with cognition and learning disabilities is to adapt the page to suit their needs using browser controls or custom style sheets.
+    >. This allows people to adjust font styles, font and background colors. People can also customize borders, increase line spacing, adjust margins, and so on.
+    >. All this is only possible as long as the website has been coded in such a way as to allow people to make such customization.
+
+>> Text
+    >. Complex sentences that are difficult to read and unusual words that are difficult to understand can prevent users from understanding content and context.
+    >.Use of metaphors and slang can be difficult for some people who do not understand nuance. 
+    >. Walls of text can also be equally difficult to understand. Ideally, long passages of text should make good use of headings, subheadings, bulleted and numbered lists as well as images, graphs or other illustrations to help explain and reinforce information contained within the text.
+
+>> Images
+     >. Images can be both helpful or distracting depending on how they are used.
+     >. By using a balanced way, images can enhance the understanding of a page by providing a secondary way of conveying information already contained in the text and reinforcing meaning.
+
+>> Movement & Animation
+   >. Movement and animation should be avoided, or come to a rest after a short time. 
+   >. Alternatively, a stop, pause or mute button can be provided to stop the animation or media.
+
+
+>>>>>>>>>>>>>> Browser Settings and Customization <<<<<<<<<<<<
+
+>. A common adaptive strategy among users with low vision, no vision, cognitive and learning disabilities is
+to resize browser windows. 
+
+>. Additionally, changes in layout can help in a number of ways;
+
+     >> For example,  a mobile layout on a desktop might benefit users who wish to see less clutter on the page, remove distracting banner ads and minimize the number of key tabs to get to content. 
+                       For others, line lengths of text in articles and blog posts might be too long to read. 
+                       Reducing screen width therefore helps reduce line length. 
+
+
+>. There are also a number of accessibility extensions that can be added to browsers. 
+>. Extensions can provide a number of features to help navigation such as color filters, visible focus indicators, Caret browsing and spatial navigation.
+>. Some users may use customization tools to adapt content to their needs. These can do similar things to browser settings but might give people more choice. Tools can change font sizes, background colors, line spacing and so on. 
+
+>>>>>>>>>>>>>>> Customizing content: 
+         ZOOM "Control +""
+         Resize the window - Resize the browser window by dragging the bottom right corner to the left to make a single column layout
+
+
+
 
 
 
@@ -555,6 +753,8 @@ hence ensuring the programs or online services on the web meet the accessibility
    Example: An evaluation tool can identify if an image has a missing text alternative but can not tell you if that text alternative is appropriate in the context where it is present. 
    Testing done by a human is essential to ensure an accessible user experience.
 
+    >> Can accessibility evaluation tools test the accessibility of images? - 
+               >>>>>>>>>>. No, an evaluation tool can only identify if an image has a missing text alternative but can not tell you if that text alternative is appropriate in the context where it is present.
 
 
 
