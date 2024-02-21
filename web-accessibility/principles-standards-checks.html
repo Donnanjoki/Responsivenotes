@@ -1,0 +1,435 @@
+<!--
+
+*************************** Principles - standards and checks *******************************
+
+>. The W3C Web Accessibility Initiative (WAI) guidelines for digital accessibility includes;
+
+    1]] Web Content Accessibility Guidelines - WCAG
+    2]] Authoring Tool Accessibility Guidelines - ATAG
+    3]] User Agent Accessibility Guidelines - UAAG
+
+
+################ POUR Principles ######################################
+
+>. The W3C Web Content Accessibility Guidelines (WCAG) defines four principles:
+
+   1]] Perceivable - information can be presented in different ways; for example, in braille, different text sizes, text-to-speech, or symbols, etc
+   2]] Operable - Functionality can be used in different modalities; for example, keyboard, mouse, sip-and puff, speech input, torch
+   3]] Understandable -  information and functionality is understandable; for example consistent navigation, simple language, etc
+   4]] Robust - content can be interpreted reliably by a wide variety of browsers, media players, and
+                assistive technologies.
+
+
+There are currently two stable versions of WCAG that are both supported by W3C:
+
+   A]] WCAG 2.0 was published in December 2008, and has become widely adopted as the standard for web accessibility by many businesses and governments around the world.
+            >. It defines 12 guidelines under the four POUR principles.
+            >. Under each Guideline there are more specific Success Criteria divided into three Conformance Levels: A, AA, and AAA. WCAG 2.0 defines 61 Success Criteria.
+   B]] WCAG 2.1 was published in June 2018, to better address accessibility for people with cognitive and learning disabilities, people with low vision, and people with disabilities using mobile devices. 
+            >. WCAG 2.1 is fully backward compatible with WCAG 2.0, so that if your content conforms to WCAG 2.1 it also conforms to WCAG 2.0.
+            >. WCAG 2.1 defines 13 Guidelines and 78 Success Criteria.
+
+>.Many policies require conformance to WCAG Level AA.
+>. WCAG is a normative W3C web standard called W3C Recommendation. It is designed to be technology-agnostic so that it applies to different technologies. 
+>. For example, WCAG does not specify how to code a heading, list, or table. Instead, it requires that such structures are present. 
+>. This allows WCAG to be applicable to a wide range of technologies including HTML, CSS, and JavaScript, as well as many types of mobile apps, electronic documents, and other digital content.
+
+
+>. WCAG is supported by non-normative (informative) technical guidance. These are not W3C web standards and can therefore be more regularly updated,
+>. They include; 
+
+     1]] Understanding WCAG 2 provides background and explanation of the requirements, such as who it benefits and examples. It is a very useful resource for people learning the standard.
+     2]] Techniques for WCAG 2 provides documented ways of meeting the Success Criteria defined by WCAG, advisory good practice, as well as commonly encountered failures in accessibility.
+     3]] How to Meet WCAG 2 (sometimes called Quick Reference) brings all this information together in a dynamic widget with filters to help you select only the information you currently need.
+
+
+
+################ Harmonized Standards ###############################
+
+>. With the world becoming globally connected, more so in the digital space there is need to harmonize technical standards for web accessibility,
+as it not only reduces confusion and strenuous work to the developers but also saves a lot of time for organizations'
+as they are able to focus on business needs rather than implementation of accessibility.
+
+>. By many businesses and governments adopting WCAG s the international standard for web accessibility;
+  This development helps increase the awareness of accessibility, the support for accessibility in mainstream products and services, and accelerates the implementation of accessibility.
+
+?>>>>>>>>>>>>The WCAG PROCESS <<<<<<<<<<<<<<<
+
+>. W3C web standards, called Recommendations, are developed transparently in an open collaborative space. 
+>. The W3C Process defines specific roles and responsibilities in working groups, as well as mechanisms for conflict resolution and consensus building.
+
+>. Those involved include;
+       1]] People with disabilities and organizations representing people with disabilities
+       2]] Industry, including large, small and medium-sized enterprises (SMEs), and independent consultants
+       3]]  Public bodies and other governmental agencies
+       4]] Researchers, including industrial and applied research
+       5]] Educators, including formal education and business training
+
+
+Review more>>>>>>>>>> https://www.w3.org/WAI/standards-guidelines/harmonization/
+
+
+
+
+######################### Principle 1: Perceivable ##############################################
+
+\
+
+
+
+
+
+>>>>>>>>>>>> Text Alternatives <<<<<<<<<<<
+
+>.Text alternatives is a foundational aspect of digital accessibility. There are typically many graphical and non-text objects on the screen, such as images, buttons, form controls. 
+>. These need text alternatives, which are read aloud by screen readers or used by speech input to activate links.
+
+>. Text alternative: Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols, or simpler language.
+
+>. Types of images may include: 
+    1] Pictures of people, and places
+    2] Charts, diagrams, and other infographics
+    3] Buttons and other actionable objects
+    4] Decoration and illustrative images
+
+>. Each of these needs a text alternative that conveys the purpose of the image. That is, the information that the image is communicating visually, or that function that it provides to the user.
+
+>. Examples include;
+    >. Functional Images such as that of a logo(in this case WAI text logo) the text alternative can read - "Web Accessibility initiative homepage."
+    >. Decorative images: Often images are used purely for visual decoration, and do not provide information or functionality.
+                          such as a visual separator - here such images need to have an empty text alternative.
+                          This communicates to assistive technologies that it is safe to ignore this image.
+                          >. Note: do not that you forgot to add the text alternative.
+
+
+>.Many tools do other the functionality of adding text alternatives into your content such as 
+   Microsoft Word and Google Docs, social media sites like Instagram and X and CMS like Drupal, WordPress.
+
+>. In HTML, a common way of providing text alternatives is to use the alt attribute of the img element. 
+Such alt-text should be short and succinct.
+
+>. There are other methods you can use when you need to provide long descriptions, for example for a chart, diagram, or other infographic.
+
+>. Before evaluating non-text content like an image the first step is to think about its purpose,
+   is it;
+   a]] Decorative - if the non-text content is decorative you need to hide it from assistive technology devices
+   b]] informative - make sure your alternative text is meaningful, descriptive, and does not repeat.
+   c]] Actionable - provide information about the function of the image instead of describing the image. 
+   
+ Tools to use;   WAVE® is a suite of evaluation tools that helps authors make their web content more accessible to individuals with disabilities. 
+                WAVE can identify many accessibility and Web Content Accessibility Guideline (WCAG) errors, but also facilitates human evaluation of web content.
+
+
+>>>>>>>>>>>>>> Time-based Media <<<<<<<<<<<<<<
+
+>. Time-based media refers to content that is dependent on time. The purpose of this check is to make sure people have access to time-based and synchronized media using alternative formats.
+
+>. This includes media such as;
+      >> audion-only files - example podcasts
+      >> Video-only files - example silent video tour of a property
+      >> video plus audion - example movies
+      >> slideshows and presentations with visual and/or audio information that is time-based.
+
+
+### Alternatives for time-based media ####
+
+    A]] Captions
+
+>. Captions are text synchronized with the multimedia for people who cannot hear the spoken words. People often confuse “captions” and “subtitles,” but they are not the same thing. 
+>. Both are text synchronized with the words in a video and both often appear in the same location in the media (usually the bottom of the screen). 
+>. Captions should remain verbatim like a literal translation, so clarifications beyond the audio information is not necessary.
+>. Sound effects like an opening door or footsteps, should be included in captions when they are relevant.
+>. Music, like background music, is important to capture when they are relevant.
+>. Similarly, laughter laughter or applause, is important to capture when they are relevant.
+>. Speaker identification needs captions, especially if there are several people in the video and it is not clear who is speaking.
+
+
+>. However captions can be thought of as a transcription of dialogue for people who are Deaf and hard-of-hearing, while subtitles are essentially helper text for people who can hear the 
+   audio but may not understand what was said (ex. garbled speech or words spoken in a language you don’t understand).
+>. Captions come in two forms: open or closed. Closed captioning can be turned off by the viewer with a click of a button, while open captions are
+   essentially burned into the video and cannot be turned off.
+
+    B]] Transcripts
+
+>. Transcripts are the full text of the spoken words and important visual information in the media file, to read as an alternative to watching or listening to the media file. 
+>. Transcripts are text-based documents that serve as an alternative to information presented in an audible and visual format.
+>. They are similar to captions, but they take the experience to the next level by including important sound effects and other significant visual descriptions (ex. describing eerie sounds in the background). 
+
+    C]] Audio Descriptions
+
+>. Audio descriptions are a version of the multimedia file that includes a narrator explaining important visual information - such as unspoken actions and events - 
+   for the benefit of people who cannot see what’s happening on the screen
+>. Audio descriptions, unlike captions and transcripts, are a recording of a person explaining the visual aspects of the video that aren’t in the video’s original dialog or narration (ex. describing facial expressions or scenery). 
+>. Audio descriptions should convey visual information verbally–that dialogue and other sounds cannot.
+
+    D]] Sign Language
+
+>. Sign language interpretation for multimedia is when you add a video of an interpreter, sometimes shown in a box to the side of the video, who narrates the audio portion through sign language. 
+>. Sign language interpretation is often more expressive than just written transcripts, so can provide a much richer experience than captions or transcripts alone.
+
+
+
+>>>>>>>>>>>>> Adaptable Content <<<<<<<<<<<<<<<<
+
+>.  WCAG Guideline on adaptable content -     Create content that can be presented in different ways (for example simpler layout) without losing information or structure.
+
+>. To meet this guideline, it is important that structures such as headings and lists are correctly coded as such.
+
+>. Lookout for the structures when you are creating digital content using word processors, content management systems, and other content editors
+
+>>>>>>>>.. Check basic structure of a site:
+   
+    >. Components to look for in a basic structure: 
+      Headings, Lists, Tables and reading flow
+    >. Page titles are not found on the actual webpage, but in the browser tab, so they do not factor into the webpage structure.
+
+   >. To get a basic structure view of the page, you need to turn off images and shows text alternatives, turn off style sheets 
+   which specifies how the page is displayed with layout, colors, etc. 
+   >. Linearize the page or the tables so that they appear in a single column.
+   >. Who does this help? People using screen readers, people using Braille, people with low vision, and people who need to customize how content is presented.
+
+
+>. "Disabling Styles" will allow you to see the underlying structure and order of the content.
+>. This can help identify potential issues with how the content can be displayed in different ways to a variety of people. 
+>. When viewing the linearized page, you can check that the information makes sense when read in the order it is shown.
+
+Example: An h1's job is to tell the user what the webpage is about. In most cases, there is only one "main point" of the webpage - so only h1 is needed. 
+>. Screen reader users don't care about your website's style - they care about the underlying structure.
+>. A webpage needs to have different levels of headings so the reader knows what is the main idea, followed by the secondary idea, and so on. 
+
+
+
+>>>>>>>>>>>>>>  Distinguishable Content <<<<<<<<<<<<<<<
+
+>. This check is concerned with making the default presentation as easy to perceive as possible to people with disabilities.
+>. WCAG guideline states -     Make it easier for users to see and hear content including separating foreground from background.
+
+>. Examples of making content distinguishable include:
+
+    1]] Color is not used as the only way of conveying information or identifying content
+    2]] Default foreground and background color combinations provide sufficient contrast
+    3]] When users resize text up to 200% or change text spacing, no information is lost
+    4]] Text reflows in small windows (“viewports”) and when users make the text larger
+    5]] Images of text are resizable, replaced with actual text, or avoided where possible
+    6]] Users can pause, stop, or adjust the volume of audio that is played on a website
+    7]] Background audio is low or can be turned off, to avoid interference or distraction
+
+
+
+
+
+### Do not rely on color alone ###
+
+>. Some people perceive colors differently or not at all. Providing instructions like "complete all fields marked in red" is not sufficient 
+   because some people will not find these form fields marked in red. 
+>. In addition to or instead of using color, you need to use another identifier that does not rely on using color alone. This can be simply adding an asterisk next to the field:
+
+
+
+
+### Provide sufficient contrast ###
+
+>. Providing sufficient contrast between foreground and background color - (contrast ratio) is paramount.
+>. The contrast ratio should be at least 4.5:1 and ideally 7:1 for text. For graphical objects, such as charts, and for large text, a contrast ratio of 3:1 may be sufficient.
+>. There are several tools to help you calculate the contrast ratio and select appropriate color combinations. such as >>>> color contrast checker
+
+
+
+
+
+### Support Content resizing ###
+
+>. many people need to change the size of text. Either by using assistive technologies such as screen magnification too, or changing other
+  aspects of text presentation including color, spacing, and font type, to make it easier for them to read. 
+>. This may not be related to vision acuity but to how people process visual information,
+>. Yet unfortunately designs often break when text size is increased or when the page is magnified. 
+   For example, content starts to overlap so that important information becomes unreadable, or functionality becomes unusable.
+   >. Most people cannot effectively read text that requires horizontal scrolling And for some, it becomes impossible.
+
+>. An indication of good design is that information is not lost when the text size is changed.
+
+
+
+
+### Ensure control of audio ###
+
+>. Not only visual information needs to be distinguishable but also audio. Imagine a website or app that automatically starts playing music. 
+>. If audio is playing for longer than 3 seconds, then users need to be able to pause or stop the audio, or lower the volume of the audio playing.
+>.  It is also important to remember that some people with hearing disabilities need clear audio to understand the information, and need to be able to turn off background audio if it is too loud.
+
+>. For videos on websites, it is important that the user has control over the sound so it doesn't interfere with assistive technology device users.
+   >. hence the need to provide a control to turn of pause or adjust the video
+
+
+
+
+
+###############################Principle 2: Operable #################################################
+
+>. 
+
+
+
+################################ Principle 3: Understandable #########################################
+
+>. A first step to making your content more understandable to everyone, is to make it more readable.
+
+>. This includes aspects such as:
+
+            1]] Identifying the primary language of pages and of page parts
+            2]] Explaining abbreviations, unusual words, and phrases
+            3]] Using simple language or providing simplified alternatives
+
+
+###### Supporting Language #########
+
+>. Just like in many word processors, you can also set the default language of your content in HTML. 
+>. Some content management systems and code editors help you set that, by changing the lang attribute of the html element to the desired language. 
+>. Now your browser and assistive technologies know what language the page is in.
+
+###### Avoiding Jargon #############
+
+>. It is generally good practice to avoid acronyms, difficult words, idioms, and unusual phrases. 
+>. Many people with or without disability have difficulty understanding such jargon. 
+
+
+####### Simple Language ##############
+
+>. Another aspect of good authoring is using the simplest and clearest language possible.
+>. This includes writing shorter sentences with less complexity. This will mean different things depending on the particular audience and language.
+>. In some cases, it may be not possible to simplify the language, for example for legal reasons - when citing a law. 
+   Yet alternative versions in simpler language can always be considered, to help make the content more understandable for most audiences.
+
+
+
+
+
+############# Predictable Content #########################
+
+>. Many people are disoriented or distracted by an inconsistent appearance or behavior of the content. 
+>. WCAG Guideline:     Make Web pages appear and operate in predictable ways.
+
+>. Important considerations to keep in mind:
+       1]] Keep the navigation consistent across your website
+       2]] Name buttons and controls consistently too
+       3]] Avoid changing the page simply when actionable elements receive focus or input
+
+
+############## Input Assistance #############################
+
+>. Forms and applications can be confusing or difficult to use for many people. For example, a form without useful instructions makes it hard to complete it.
+>. Hence according to WCAG -     Help users avoid and correct mistakes.
+
+>. This can be through good instructions, good labels for buttons and controls in applications - so users can understand the purpose and use.
+
+>. Additionally, feedback is equally important - mostly on errors and how to correct them.
+>. Errors need to be described to the user, ideally in simple terms. For example, instead of "wrong date," provide instructions on the required format to help users succeed.
+>. In particular for critical transactions such as legal commitments, it is important to provide ways for users to prevent errors.
+     These could include:
+
+      >> Submissions can be reversed
+      >> Submissions are checked for errors
+      >> User is provided opportunity for final review and correction before submitting
+
+
+
+
+
+
+
+
+
+
+############################### Principle 4: Robust #############################
+
+>. Robust content is compatible with different browsers, user agents, and assistive technologies, such as screen readers, screen magnifiers, and speech recognition software.
+
+>. To maximize this compatibility- we can;
+ 
+     1] Ensuring markup is valid and can be reliably interpreted
+
+     2]] Providing a name, role and value for non-standard user interface components.
+
+
+>. By meeting this requirement it helps maximize compatibility with current and future agents, including assistive technologies.
+>. Additionally, assistive technologies are able to process content reliably, as well as present or to operate it in different ways.
+
+
+
+########## Accessible Rich Internet Applications (WAI-ARIA) ###########
+
+>. WAI-ARIA defines a collection of attributes to help modify incorrect markup and to bridge gaps in HTML to create more accessible experience to those using assistive technology (AT). 
+>. WAI-ARIA does not change your web page from a visual perspective, unless you add styling to your CSS that specifically targets WAI-ARIA. 
+>. This means that no one except assistive technology devices (and the people using them) will notice any differences between a web page or app with WAI-ARIA and one without it.
+
+
+############ How to meet WCAG (Quick Reference) #############
+
+>. How to Meet WCAG (Quick Reference) is a customizable quick reference to WCAG that includes all of the guidelines, success criteria, and techniques for authors to use as they are developing and evaluating web content. 
+
+>. This tool provides a customizable view of WCAG 2 resources:
+
+            Web Content Accessibility Guidelines (WCAG) 2.1 and 2.0
+            Techniques for WCAG 2 implementation guidance
+            Understanding WCAG 2 supporting information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+############# Summary ###############
+
+>. It is important to remember that the underlying spirit of P.O.U.R. isn't about
+  rigidly adhering to hard and fast rules - it's about understanding and meeting the
+  diverse needs of your users. 
+
+>. Hence following the WCAG guidelines become more of a roadmap rather than a to-do list.
+
+>. Take-away tips: 
+       >>  Take it one step at a time - When you're new to digital accessibility it can get very complicated, very fast.
+           You should try and focus on one aspect of accessibility at a time, so you'll not be overwhelmed
+
+       >> People first It is important to remember what this is all about equal access to information for all people. 
+         Digital accessibility is not just a "nice to have" but a "must have" since it's about quality of life for real people.
+
+        >> Accessibility benefits everyone.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+-->
