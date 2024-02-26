@@ -113,9 +113,16 @@ Such alt-text should be short and succinct.
 >. Before evaluating non-text content like an image the first step is to think about its purpose,
    is it;
    a]] Decorative - if the non-text content is decorative you need to hide it from assistive technology devices
+                  - These images need to have an empty text alternative to achieve this.
    b]] informative - make sure your alternative text is meaningful, descriptive, and does not repeat.
    c]] Actionable - provide information about the function of the image instead of describing the image. 
-   
+                   - Screen reader users, Braille output device users, and people using speech input should all be able to trigger a link or click a button by their various assistive technology devices.
+                   - Alternative text on an image helps a user know what link or button they are triggering.
+
+
+
+
+
  Tools to use;   WAVE® is a suite of evaluation tools that helps authors make their web content more accessible to individuals with disabilities. 
                 WAVE can identify many accessibility and Web Content Accessibility Guideline (WCAG) errors, but also facilitates human evaluation of web content.
 
@@ -230,7 +237,7 @@ Example: An h1's job is to tell the user what the webpage is about. In most case
 ### Provide sufficient contrast ###
 
 >. Providing sufficient contrast between foreground and background color - (contrast ratio) is paramount.
->. The contrast ratio should be at least 4.5:1 and ideally 7:1 for text. For graphical objects, such as charts, and for large text, a contrast ratio of 3:1 may be sufficient.
+>. The contrast ratio should be at least 4.5:1 for regular-sized text and ideally 7:1(for headings and titles)  for text. For graphical objects, such as charts, and for large text, a contrast ratio of 3:1 may be sufficient.
 >. There are several tools to help you calculate the contrast ratio and select appropriate color combinations. such as >>>> color contrast checker
 
 
@@ -266,7 +273,174 @@ Example: An h1's job is to tell the user what the webpage is about. In most case
 
 ###############################Principle 2: Operable #################################################
 
->. 
+
+
+********************** Keyboard Accessible ********************************
+
+>. The keyboard is for many people the primary or only way of using the computer.
+>. If all functionality of a webpage works using only a keyboard, that means it can also be used by people using speech input (which creates keyboard input), 
+   by mouse (using on-screen keyboards), and by a wide variety of assistive technologies.
+>. There should be multiple input modalities for each element on a webpage - you should not require a user to use only one method.
+
+>.WCAG guideline: Make all functionality available from a keyboard.
+
+>. Some people use specialized keyboards with ergonomic layouts, on-screen keyboards, or switch devices.
+>. Others use the keyboard through speech input or other means of interaction, such as brain computer interfaces.
+
+>. Hence the importance of ensuring that all functionality is accessible from the keyboard - hence a functionality should not require a mouse.
+
+>> Elements that should have keyboard access and visual focus include; links, form elements, media controls and modals.
+>. Many people can benefit from keyboard functionality such as;
+      1] People with attention disorders
+      2] People with cognitive and short-term memory issues
+      3] People with visual impairments
+      4] People with mobility impairments
+      5] People using assistive technologies and strategies that rely on keyboard commands.
+      6] People who rely on the keyboard to operate the page,
+
+            >> Keyboard traps <<<<
+
+>. These are either elements where the keyboard cannot access - for instance a tooltip that relies on hover
+or elements where keyboard cannot escape - for example a modal pop-up with no options to close.
+
+
+>. Besides every active element being keyboard accessible, the keyboard focus should be visible at all times and should follow a logical order
+through the page elements.
+>. It is important for users to know where they are on a page at all times.
+
+           >>> Tests for keyboard and visual focus <<<
+
+1. Tab to all                             5. Functionality
+2. Tab away                                6. Drop-downs
+3. Tab order
+4. Visual focus
+
+
+
+
+
+
+********************** Enough Time *****************************************
+
+>.WCAG Guideline:     Provide users enough time to read and use content. 
+
+>. It is important to remember that some people need more time to read and use the content.
+>. Example, it may take more time for someone with a learning disability to read text, and for someone using a switch control to complete a form. 
+
+>. Providing clear information about the available time and instructions for extending it is essential for many people.
+
+>. Another related issue is content that continually moves, blinks, scrolls, or updates automatically.
+>. This can be a carousel component on a page - a series of images and text that rotate at regular intervals. 
+>. Often these components are fairly large and change quickly - this can be very distracting for many people
+
+>>>>>>>>>>>>>>>>>>>>  Examples of providing enough time include providing mechanisms to:
+   
+    1]] Stop, extend, or adjust time limits, except where necessary
+   2]]  Pause, stop, or hide moving, blinking, or scrolling content
+   3]]  Postpone or suppress interruptions, except where necessary
+   4]]  Re-authenticate when a session expires without losing data
+
+
+
+
+***************** Avoid seizures and Physical reactions ********************
+
+>>. WCAG Guideline:  Do not design content in a way that is known to cause seizures or physical reactions.
+
+>. Content should not flash or blink at a rate of more than three times per second.
+>. Content that covers a large area of the screen, and is very bright.
+>. This is because for some users, flashing and blinking content can trigger a seizure or photosensitive reactions.
+
+>. Flashing content is ideally avoided entirely or only used in a way that does not cause known risks.
+>. Some animations and moving content can also cause discomfort, nausea, and other physical reactions.
+
+>. Animated media must not auto-play for more than five seconds. 
+  If you plan to have animations go on longer than five seconds or play on an infinite loop, provide a way for users to pause the animation
+>. An animation that cannot be paused can be extremely distracting for people with different types of cognitive disabilities.
+
+>>>>>. example of moving, flashing, or blinking content on websites and apps. Some examples include: carousels, slideshows, SVGs, Gifs, videos, and endless scrolling. 
+>. Who does this help??
+
+      1]] people who have seizures or migraines when viewing flashing or blinking material
+      2]] people who have vertigo or get nauseous when viewing moving content
+      3]] people who have difficulty tracking moving objects
+      4]] people with attention deficit disorders.
+     
+>.No matter the case users need to be able to control moving content and choose what works best such as 
+   utilizing media queries like "prefers reduced motion".
+
+   >. Tool to use; Trace Center's photosensitive epilepsy analysis tool or PEAT
+
+
+
+
+
+
+
+
+*********************** Navigable Content *******************************
+
+>. WCAG Guideline: Provide ways to help users navigate, find content, and determine where they are.
+
+>. Good structures help support effective navigation, hence aiding users who utilize assistive technologies to
+manoeuver through the web.
+
+>. Hence since most people navigate web content in various ways its fittingly fair to ensure more structure and semantics
+is provided in the content to make it more navigable.
+
+>. This can be done through providing headings and labels to the content or using useful filename or good naming system.
+>. Headings give an assistive technology device user more information about the structure of the page and can allow them 
+  to navigate to sections of the webpage that they want to know more about.
+>. Additionally there should be a focus indicator to guide users on where they are on the webpage.
+
+
+>. Web page titles should reflect the content and purpose of the page.
+
+>. Page titles must be descriptive.
+>. Good page titles are particularly important for orientation to help people know where they are and move between pages in their browser
+>. Who does this help???
+         1]] people using screen readers
+         2]] people using Braille
+         3]] people with visual disabilities
+         4]] people with cognitive disabilities
+         5]] limited short-term memory and reading disabilities,
+         6]] people using speech input.
+
+>. Page titles are also used by search engines and used for browser bookmarks and favorites
+>. It is important to front-load important information on a page title. 
+>. Unless you add more information programmatically, you should avoid link text that does not give context to where the link is going.
+>. While contact information is certainly important for your users, links, site maps, and a search feature are critical to finding information on a website.
+
+
+
+
+*********************** Input Modalities *******************************
+
+>. WCAG Guideline:  Make it easier for users to operate functionality through various inputs beyond keyboard.
+
+>. People use many more modalities apart from keyboard and mouse to interact with computers and the Web - such as touch screens, voice commands, 
+>. These include; touch screens, Information stands at train stations, airports, and other public spaces commonly use touch screens. 
+>. Also gestures, like shaking, tapping, or moving your mobile phone or smart watch to activate functions have become quite common.
+
+>. They key aspect is to design functionality in such a way so that it accepts input from a variety of different input modalities.
+>. Input modalities beyond keyboard, such as touch activation, voice recognition (speech input), and gestures make content easier to use for many people. 
+
+
+
+>> Design considerations that maximize the benefit of input modalities
+
+    1]] Gestures that require dexterity or fine movement have alternatives that do not require high dexterity
+    2]] Components are designed to avoid accidental activation, for example by providing undo functionality
+    3]] Labels presented to users match corresponding object names in the code, to support activation by voice
+    4]] Functionality that is activated by movement can also be activated through user interface components
+    5]] Buttons, links, and other active components are large enough to make them easier to activate by touch
+
+>. People who have motor issues are the target audience for increasing the touchable areas on functional elements.
+>. Note: The visual text is important, because that is the command that will be spoken by a user using voice input. 
+>. If the image visually had the words "go" but programmatically it said "checkout" the voice command could fail.
+
+
+
 
 
 
